@@ -70,6 +70,32 @@ export type Dictionary = {
     body: string;
     backHome: string;
   };
+  contactPage: {
+    title: string;
+    intro: string;
+    infoTitle: string;
+    phoneLabel: string;
+    phonePlaceholder: string;
+    form: {
+      nameLabel: string;
+      namePlaceholder: string;
+      emailLabel: string;
+      emailPlaceholder: string;
+      phoneLabel: string;
+      phonePlaceholder: string;
+      subjectLabel: string;
+      subjectOptions: { value: string; label: string }[];
+      messageLabel: string;
+      messagePlaceholder: string;
+      submit: string;
+      submitting: string;
+      successTitle: string;
+      successBody: string;
+      sendAnother: string;
+      errorRequired: string;
+      errorEmail: string;
+    };
+  };
   common: {
     placeholderImage: string;
   };
@@ -171,6 +197,37 @@ export const dictionary: Record<Locale, Dictionary> = {
       body: "این صفحه در حال ساخت است.",
       backHome: "بازگشت به خانه",
     },
+    contactPage: {
+      title: "تماس با ما",
+      intro:
+        "برای درخواست‌های عمومی، سفارش‌های فله/تانکری، یا سوال درباره درجه‌هایی که در فروشگاه موجود نیستند، با ما در تماس باشید.",
+      infoTitle: "اطلاعات تماس",
+      phoneLabel: "تلفن",
+      phonePlaceholder: "شماره تماس به‌زودی",
+      form: {
+        nameLabel: "نام",
+        namePlaceholder: "نام و نام خانوادگی",
+        emailLabel: "ایمیل",
+        emailPlaceholder: "you@example.com",
+        phoneLabel: "تلفن (اختیاری)",
+        phonePlaceholder: "۰912xxxxxxx",
+        subjectLabel: "موضوع",
+        subjectOptions: [
+          { value: "general", label: "درخواست عمومی" },
+          { value: "bulk", label: "سفارش فله/تانکری" },
+          { value: "product", label: "سوال درباره محصول" },
+        ],
+        messageLabel: "پیام",
+        messagePlaceholder: "پیام خود را بنویسید...",
+        submit: "ارسال پیام",
+        submitting: "در حال ارسال...",
+        successTitle: "پیام شما ارسال شد",
+        successBody: "با تشکر — به‌زودی با شما تماس می‌گیریم.",
+        sendAnother: "ارسال پیام دیگر",
+        errorRequired: "این فیلد الزامی است",
+        errorEmail: "یک ایمیل معتبر وارد کنید",
+      },
+    },
     common: {
       placeholderImage: "تصویر جایگزین — عکس واقعی بعداً اضافه می‌شود",
     },
@@ -269,6 +326,37 @@ export const dictionary: Record<Locale, Dictionary> = {
       title: "Coming Soon",
       body: "This page is under construction.",
       backHome: "Back to Home",
+    },
+    contactPage: {
+      title: "Contact",
+      intro:
+        "Reach out for general inquiries, bulk or tanker orders, or questions about grades not currently sold through the Shop.",
+      infoTitle: "Contact Information",
+      phoneLabel: "Phone",
+      phonePlaceholder: "Phone number coming soon",
+      form: {
+        nameLabel: "Name",
+        namePlaceholder: "Full name",
+        emailLabel: "Email",
+        emailPlaceholder: "you@example.com",
+        phoneLabel: "Phone (optional)",
+        phonePlaceholder: "+98 912 xxx xxxx",
+        subjectLabel: "Subject",
+        subjectOptions: [
+          { value: "general", label: "General Inquiry" },
+          { value: "bulk", label: "Bulk/Tanker Order" },
+          { value: "product", label: "Product Question" },
+        ],
+        messageLabel: "Message",
+        messagePlaceholder: "Write your message...",
+        submit: "Send Message",
+        submitting: "Sending...",
+        successTitle: "Message sent",
+        successBody: "Thanks — we'll be in touch soon.",
+        sendAnother: "Send another message",
+        errorRequired: "This field is required",
+        errorEmail: "Enter a valid email address",
+      },
     },
     common: {
       placeholderImage: "Placeholder image — real photo to be added",
