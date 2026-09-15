@@ -98,16 +98,18 @@ export default function ContactPage() {
         <section className="relative overflow-hidden border-b border-surface-border bg-surface-950">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-50" />
           <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
-          <Container className="relative py-20 md:py-28">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
-              {dict.nav.contact}
-            </p>
-            <h1 className="mt-3 text-4xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-5xl">
-              {dict.contactPage.title}
-            </h1>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink-400 md:text-base">
-              {dict.contactPage.intro}
-            </p>
+          <Container className="relative py-10 md:py-12">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+                {dict.nav.contact}
+              </p>
+              <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-4xl">
+                {dict.contactPage.title}
+              </h1>
+              <p className="mt-3 text-sm leading-relaxed text-ink-400 md:text-base">
+                {dict.contactPage.intro}
+              </p>
+            </div>
           </Container>
         </section>
 

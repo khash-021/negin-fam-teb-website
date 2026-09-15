@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -34,8 +33,14 @@ export default function ProductsPage() {
               <p className="text-sm font-medium text-ink-100">
                 {dict.productsBanner.title}
               </p>
-              <Link
-                href="/shop"
+              <a
+                href="#products-grid"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("products-grid")
+                    ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                }}
                 className="inline-flex shrink-0 items-center gap-2 rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950"
               >
                 {dict.productsBanner.cta}
@@ -49,10 +54,10 @@ export default function ProductsPage() {
                 >
                   <path d="M4 10h12M11 5l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-              </Link>
+              </a>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <div id="products-grid" className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 scroll-mt-24">
               {grades.map((grade) => {
                 const item = dict.grades.items[grade.id];
                 return (
@@ -60,7 +65,7 @@ export default function ProductsPage() {
                     key={grade.id}
                     className="group flex flex-col overflow-hidden rounded-xl border border-surface-border bg-surface-700 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-500/50 hover:shadow-glow-red"
                   >
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-surface-800">
+                    <div className="relative aspect-[5/6] w-full overflow-hidden rounded-t-xl bg-surface-800">
                       <Image
                         src={grade.image}
                         alt={item.title}
@@ -68,38 +73,21 @@ export default function ProductsPage() {
                         sizes="(min-width: 640px) 33vw, 100vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-surface-700 to-transparent" />
                     </div>
 
-                    <div className="flex flex-1 flex-col justify-between p-7">
-                      <div>
-                        <span className="text-4xl font-extrabold tracking-tight text-brand-400">
-                          {grade.percent}
-                        </span>
-                        <h2 className="mt-4 text-base font-semibold text-ink-50">
-                          {item.title}
-                        </h2>
-                        <p className="mt-2 text-sm leading-relaxed text-ink-400">
-                          {item.desc}
-                        </p>
-                      </div>
+                    <div className="flex flex-1 flex-col p-5">
+                      <span className="text-2xl font-extrabold tracking-tight text-brand-400">
+                        {grade.percent}
+                      </span>
+                      <h2 className="mt-1 text-sm font-semibold text-ink-50">
+                        {item.title}
+                      </h2>
+                      <p className="mt-1.5 text-xs leading-relaxed text-ink-400">
+                        {item.desc}
+                      </p>
 
-                      <div>
-                        <GradeCardActions />
-
-                        <span className="mt-4 flex items-center gap-2 text-sm font-medium text-brand-400 opacity-0 transition-all duration-200 translate-y-1 group-hover:translate-y-0 group-hover:opacity-100">
-                          {item.cta}
-                          <svg
-                            aria-hidden="true"
-                            viewBox="0 0 20 20"
-                            className="h-4 w-4 rtl:-scale-x-100"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                          >
-                            <path d="M4 10h12M11 5l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </span>
-                      </div>
+                      <GradeCardActions />
                     </div>
                   </div>
                 );

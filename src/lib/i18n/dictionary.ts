@@ -199,8 +199,7 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     contactPage: {
       title: "تماس با ما",
-      intro:
-        "برای درخواست‌های عمومی، سفارش‌های فله/تانکری، یا سوال درباره درجه‌هایی که در فروشگاه موجود نیستند، با ما در تماس باشید.",
+      intro: "برای درخواست‌های عمومی یا سفارش‌های فله/تانکری با ما در تماس باشید.",
       infoTitle: "اطلاعات تماس",
       phoneLabel: "تلفن",
       phonePlaceholder: "شماره تماس به‌زودی",
@@ -329,8 +328,7 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     contactPage: {
       title: "Contact",
-      intro:
-        "Reach out for general inquiries, bulk or tanker orders, or questions about grades not currently sold through the Shop.",
+      intro: "Reach out for general inquiries or bulk and tanker orders.",
       infoTitle: "Contact Information",
       phoneLabel: "Phone",
       phonePlaceholder: "Phone number coming soon",
