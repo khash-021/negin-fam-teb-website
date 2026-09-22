@@ -65,13 +65,24 @@ export default function ProductsPage() {
                     key={grade.id}
                     className="group flex flex-col overflow-hidden rounded-xl border border-surface-border bg-surface-700 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-500/50 hover:shadow-glow-red"
                   >
-                    <div className="relative aspect-[5/6] w-full overflow-hidden rounded-t-xl bg-surface-800">
+                    <div
+                      className="relative aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-surface-800"
+                      onMouseMove={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const x = ((e.clientX - rect.left) / rect.width) * 100;
+                        const y = ((e.clientY - rect.top) / rect.height) * 100;
+                        e.currentTarget.style.setProperty("--zoom-x", `${x}%`);
+                        e.currentTarget.style.setProperty("--zoom-y", `${y}%`);
+                      }}
+                    >
                       <Image
                         src={grade.image}
                         alt={item.title}
                         fill
-                        sizes="(min-width: 640px) 33vw, 100vw"
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(min-width: 640px) 66vw, 200vw"
+                        quality={90}
+                        style={{ transformOrigin: "var(--zoom-x, 50%) var(--zoom-y, 50%)" }}
+                        className="object-cover transition-transform duration-300 ease-out group-hover:scale-[2]"
                       />
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-surface-700 to-transparent" />
                     </div>
