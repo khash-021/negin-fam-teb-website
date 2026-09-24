@@ -113,7 +113,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       home: "خانه",
       about: "درباره ما",
       products: "محصولات",
-      media: "رسانه",
+      media: "گالری",
       shop: "فروشگاه",
       contact: "تماس با ما",
       languageSwitch: "EN",
@@ -128,7 +128,7 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     intro: {
       title: "چه می‌کنیم",
-      body: "نگین فام طب اتانول را از تولید تا تحویل تحت یک سقف مدیریت می‌کند: تولید در مقیاس صنعتی، بسته‌بندی استاندارد در کارتن، و تأمین فله با تانکر برای مصرف‌کنندگان صنعتی و تجاری.",
+      body: "نگین فام طب تمام مراحل اتانول، از تولید تا تحویل، را زیر یک سقف انجام می‌دهد: تولید صنعتی، بسته‌بندی استاندارد کارتنی و تأمین فله با تانکر برای مشتریان صنعتی و تجاری.",
       points: [
         { title: "تولید", desc: "خط تولید صنعتی در مراغه با ظرفیت پیوسته." },
         { title: "بسته‌بندی", desc: "بطری‌های استاندارد در کارتن‌های ۱۲ عددی." },
@@ -164,7 +164,7 @@ export const dictionary: Record<Locale, Dictionary> = {
     why: {
       title: "چرا نگین فام طب",
       points: [
-        { title: "خلوص و کیفیت", desc: "کنترل کیفیت در هر مرحله تولید، مطابق استاندارد." },
+        { title: "خلوص و کیفیت", desc: "کنترل کیفیت در تمام مراحل تولید، مطابق استانداردهای صنعت." },
         { title: "ظرفیت تولید", desc: "خط تولید پیوسته در مراغه، آماده سفارش‌های حجیم." },
         { title: "تأمین پایدار", desc: "زنجیره تأمین بدون وقفه برای مشتریان صنعتی." },
         { title: "پشتیبانی مستقیم", desc: "ارتباط مستقیم با تیم فروش در تهران و مراغه." },
@@ -173,10 +173,10 @@ export const dictionary: Record<Locale, Dictionary> = {
     facility: {
       eyebrow: "کارخانه",
       title: "کارخانه مراغه",
-      body: "خط تولید نگین فام طب در مراغه، آذربایجان‌شرقی، با ظرفیت تولید پیوسته فعالیت می‌کند.",
+      body: "خط تولید نگین فام طب در مراغه، آذربایجان شرقی، با ظرفیت پیوسته در حال فعالیت است.",
       ctaAbout: "بیشتر بدانید",
-      ctaMedia: "مشاهده تصاویر",
-      imageAlt: "نمای کارخانه مراغه (به‌زودی)",
+      ctaMedia: "مشاهده گالری",
+      imageAlt: "نمای بیرونی کارخانه نگین فام طب در مراغه",
     },
     ctaBand: {
       title: "آماده سفارش هستید؟",
@@ -306,7 +306,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       body: "Our production line in Maragheh, East Azerbaijan, operates at continuous industrial capacity.",
       ctaAbout: "Learn More",
       ctaMedia: "View Media",
-      imageAlt: "Maragheh facility view (coming soon)",
+      imageAlt: "Exterior view of the Negin Fam Teb factory in Maragheh",
     },
     ctaBand: {
       title: "Ready to Order?",

@@ -3,9 +3,10 @@
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
+import { localizeDigits } from "@/lib/i18n/digits";
 
 export function Intro() {
-  const { dict } = useLanguage();
+  const { dict, locale } = useLanguage();
 
   return (
     <section className="relative border-b border-surface-border bg-surface-900">
@@ -30,7 +31,7 @@ export function Intro() {
                 className="rounded-xl border border-surface-border bg-surface-800 p-6 shadow-card"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-500/10 text-sm font-bold text-brand-400 ring-1 ring-inset ring-brand-500/25">
-                  {String(i + 1).padStart(2, "0")}
+                  {localizeDigits(String(i + 1).padStart(2, "0"), locale)}
                 </span>
                 <h3 className="mt-5 text-base font-semibold text-ink-50">
                   {point.title}

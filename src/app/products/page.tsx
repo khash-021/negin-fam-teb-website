@@ -1,15 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
 import { GradeCardActions } from "@/components/GradeCardActions";
+import { ProductImage } from "@/components/ProductImage";
 import { grades } from "@/data/grades";
+import { localizeDigits } from "@/lib/i18n/digits";
 
 export default function ProductsPage() {
-  const { dict } = useLanguage();
+  const { dict, locale } = useLanguage();
 
   return (
     <>
@@ -65,31 +66,11 @@ export default function ProductsPage() {
                     key={grade.id}
                     className="group flex flex-col overflow-hidden rounded-xl border border-surface-border bg-surface-700 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-500/50 hover:shadow-glow-red"
                   >
-                    <div
-                      className="relative aspect-[4/3] w-full overflow-hidden rounded-t-xl bg-surface-800"
-                      onMouseMove={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const x = ((e.clientX - rect.left) / rect.width) * 100;
-                        const y = ((e.clientY - rect.top) / rect.height) * 100;
-                        e.currentTarget.style.setProperty("--zoom-x", `${x}%`);
-                        e.currentTarget.style.setProperty("--zoom-y", `${y}%`);
-                      }}
-                    >
-                      <Image
-                        src={grade.image}
-                        alt={item.title}
-                        fill
-                        sizes="(min-width: 640px) 66vw, 200vw"
-                        quality={90}
-                        style={{ transformOrigin: "var(--zoom-x, 50%) var(--zoom-y, 50%)" }}
-                        className="object-cover transition-transform duration-300 ease-out group-hover:scale-[2]"
-                      />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-surface-700 to-transparent" />
-                    </div>
+                    <ProductImage src={grade.image} alt={item.title} />
 
                     <div className="flex flex-1 flex-col p-5">
                       <span className="text-2xl font-extrabold tracking-tight text-brand-400">
-                        {grade.percent}
+                        {localizeDigits(grade.percent, locale)}
                       </span>
                       <h2 className="mt-1 text-sm font-semibold text-ink-50">
                         {item.title}

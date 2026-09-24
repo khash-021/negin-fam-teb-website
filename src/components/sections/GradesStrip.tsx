@@ -6,9 +6,10 @@ import { Container } from "@/components/Container";
 import { GradeCardActions } from "@/components/GradeCardActions";
 import { Reveal } from "@/components/Reveal";
 import { grades } from "@/data/grades";
+import { localizeDigits } from "@/lib/i18n/digits";
 
 export function GradesStrip() {
-  const { dict } = useLanguage();
+  const { dict, locale } = useLanguage();
 
   return (
     <section className="relative overflow-hidden border-b border-surface-border bg-surface-800">
@@ -38,7 +39,7 @@ export function GradesStrip() {
                     className="block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-700"
                   >
                     <span className="text-4xl font-extrabold tracking-tight text-brand-400">
-                      {grade.percent}
+                      {localizeDigits(grade.percent, locale)}
                     </span>
                     <h3 className="mt-4 text-base font-semibold text-ink-50">
                       {item.title}

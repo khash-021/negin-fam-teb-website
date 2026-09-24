@@ -16,7 +16,6 @@ export function Header() {
     { href: "/about", label: dict.nav.about },
     { href: "/products", label: dict.nav.products },
     { href: "/media", label: dict.nav.media },
-    { href: "/shop", label: dict.nav.shop },
     { href: "/contact", label: dict.nav.contact },
   ];
 
@@ -45,7 +44,10 @@ export function Header() {
           <span>{dict.hero.name}</span>
         </Link>
 
-        <nav aria-label={dict.footer.navTitle} className="hidden items-center gap-7 md:flex">
+        <nav
+          aria-label={dict.footer.navTitle}
+          className="hidden items-center gap-7 md:flex"
+        >
           {links.map((link) => (
             <Link
               key={link.href}
@@ -57,25 +59,32 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher />
-        </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-label={dict.footer.navTitle}
-          className="flex h-11 w-11 items-center justify-center rounded-md border border-surface-border text-ink-50 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
-        >
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-            )}
-          </svg>
-        </button>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label={dict.footer.navTitle}
+            className="flex h-11 w-11 items-center justify-center rounded-md border border-surface-border text-ink-50 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              {open ? (
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
+        </div>
       </Container>
 
       {open && (
@@ -91,9 +100,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-2 border-t border-surface-border pt-4">
-              <LanguageSwitcher />
-            </div>
           </Container>
         </div>
       )}
