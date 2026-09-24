@@ -38,19 +38,19 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink-500">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink-400">
             {dict.footer.tehranOfficeLabel}
           </h3>
           <p className="mt-2 text-sm text-ink-300">{dict.footer.tehranAddress}</p>
 
-          <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink-500">
+          <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink-400">
             {dict.footer.maraghehFactoryLabel}
           </h3>
           <p className="mt-2 text-sm text-ink-300">{dict.footer.maraghehAddress}</p>
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink-500">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-ink-400">
             {dict.footer.navTitle}
           </h3>
           <ul className="mt-2 flex flex-col gap-2">
@@ -66,7 +66,7 @@ export function Footer() {
             ))}
           </ul>
 
-          <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink-500">
+          <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink-400">
             {dict.footer.langTitle}
           </h3>
           <div className="mt-2">
@@ -77,7 +77,7 @@ export function Footer() {
 
       <div className="border-t border-surface-border">
         <Container className="py-5">
-          <p className="text-xs text-ink-500">
+          <p className="text-xs text-ink-400">
             {dict.footer.rights.replace("{year}", String(year))}
           </p>
         </Container>

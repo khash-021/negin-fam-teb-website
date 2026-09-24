@@ -15,7 +15,7 @@ export function ComingSoon({ navKey }: { navKey: NavKey }) {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <section className="relative overflow-hidden border-b border-surface-border bg-surface-950">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-50" />
           <div className="pointer-events-none absolute inset-0 bg-grid-fade" />

@@ -37,7 +37,7 @@ export function ImagePlaceholder({
       <p className="text-xs font-medium uppercase tracking-wide text-ink-300">
         {label}
       </p>
-      <p className="text-[11px] text-ink-500">{dict.common.placeholderImage}</p>
+      <p className="text-[11px] text-ink-400">{dict.common.placeholderImage}</p>
     </div>
   );
 }

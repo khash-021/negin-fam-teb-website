@@ -8,13 +8,13 @@ export function GradeCardActions() {
     <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-surface-border pt-3">
       <Link
         href="/shop"
-        className="inline-flex items-center gap-1.5 rounded-md bg-brand-500 px-3 py-1.5 text-xs font-semibold text-white transition-colors duration-200 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-700"
+        className="inline-flex min-h-11 items-center gap-1.5 rounded-md bg-brand-500 px-3 py-1.5 lg:min-h-0 text-xs font-semibold text-white transition-colors duration-200 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-700"
       >
         {dict.grades.orderNow}
       </Link>
       <Link
         href="/contact"
-        className="inline-flex items-center gap-1.5 rounded-md border border-surface-borderStrong px-3 py-1.5 text-xs font-medium text-ink-300 transition-colors duration-200 hover:border-brand-500/50 hover:text-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-700"
+        className="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-surface-borderStrong px-3 py-1.5 lg:min-h-0 text-xs font-medium text-ink-300 transition-colors duration-200 hover:border-brand-500/50 hover:text-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-700"
       >
         {dict.ctaBand.ctaBulk}
       </Link>

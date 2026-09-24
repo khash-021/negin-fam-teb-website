@@ -19,7 +19,7 @@ type FormValues = {
 type FieldErrors = Partial<Record<"name" | "email" | "message", string>>;
 
 const inputClasses =
-  "w-full rounded-md border border-surface-border bg-surface-900 px-4 py-2.5 text-sm text-ink-50 placeholder:text-ink-500 transition-colors duration-200 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500";
+  "w-full rounded-md border border-surface-border bg-surface-900 px-4 py-2.5 text-sm text-ink-50 placeholder:text-ink-400 transition-colors duration-200 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500";
 const invalidInputClasses = "border-brand-500 focus:border-brand-500 focus:ring-brand-500";
 const labelClasses = "text-sm font-medium text-ink-200";
 
@@ -94,7 +94,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <section className="relative overflow-hidden border-b border-surface-border bg-surface-950">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-50" />
           <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
@@ -122,13 +122,13 @@ export default function ContactPage() {
                 </h2>
                 <dl className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-ink-500">
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-ink-400">
                       {dict.footer.tehranOfficeLabel}
                     </dt>
                     <dd className="mt-1.5 text-sm text-ink-300">{dict.footer.tehranAddress}</dd>
                   </div>
                   <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-ink-500">
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-ink-400">
                       {dict.contactPage.phoneLabel}
                     </dt>
                     <dd className="mt-1.5 text-sm text-ink-300">
@@ -186,7 +186,7 @@ export default function ContactPage() {
                         className={`${inputClasses} ${errors.name ? invalidInputClasses : ""}`}
                       />
                       {errors.name && (
-                        <p id="contact-name-error" className="text-xs text-brand-400">
+                        <p id="contact-name-error" className="text-xs text-brand-300">
                           {errors.name}
                         </p>
                       )}
@@ -207,7 +207,7 @@ export default function ContactPage() {
                         className={`${inputClasses} ${errors.email ? invalidInputClasses : ""}`}
                       />
                       {errors.email && (
-                        <p id="contact-email-error" className="text-xs text-brand-400">
+                        <p id="contact-email-error" className="text-xs text-brand-300">
                           {errors.email}
                         </p>
                       )}
@@ -272,7 +272,7 @@ export default function ContactPage() {
                         className={`${inputClasses} resize-none ${errors.message ? invalidInputClasses : ""}`}
                       />
                       {errors.message && (
-                        <p id="contact-message-error" className="text-xs text-brand-400">
+                        <p id="contact-message-error" className="text-xs text-brand-300">
                           {errors.message}
                         </p>
                       )}

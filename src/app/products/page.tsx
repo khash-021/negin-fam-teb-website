@@ -14,7 +14,7 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content">
         <section className="relative overflow-hidden border-b border-surface-border bg-surface-950">
           <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-50" />
           <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
@@ -41,7 +41,7 @@ export default function ProductsPage() {
                     .getElementById("products-grid")
                     ?.scrollIntoView({ behavior: "smooth", block: "center" });
                 }}
-                className="inline-flex shrink-0 items-center gap-2 rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950"
+                className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950"
               >
                 {dict.productsBanner.cta}
                 <svg
@@ -57,7 +57,7 @@ export default function ProductsPage() {
               </a>
             </div>
 
-            <div id="products-grid" className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3 scroll-mt-24">
+            <div id="products-grid" className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
               {grades.map((grade) => {
                 const item = dict.grades.items[grade.id];
                 return (
@@ -94,7 +94,7 @@ export default function ProductsPage() {
                       <h2 className="mt-1 text-sm font-semibold text-ink-50">
                         {item.title}
                       </h2>
-                      <p className="mt-1.5 text-xs leading-relaxed text-ink-400">
+                      <p className="mt-1.5 text-xs leading-relaxed text-ink-300">
                         {item.desc}
                       </p>
 

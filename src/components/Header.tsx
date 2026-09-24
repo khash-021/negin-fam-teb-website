@@ -22,6 +22,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-surface-border bg-surface-900/90 backdrop-blur">
+      <a
+        href="#main-content"
+        className="sr-only rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60]"
+      >
+        {dict.common.skipToContent}
+      </a>
       <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"

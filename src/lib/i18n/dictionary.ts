@@ -98,6 +98,7 @@ export type Dictionary = {
   };
   common: {
     placeholderImage: string;
+    skipToContent: string;
   };
 };
 
@@ -229,6 +230,7 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     common: {
       placeholderImage: "تصویر جایگزین — عکس واقعی بعداً اضافه می‌شود",
+      skipToContent: "پرش به محتوای اصلی",
     },
   },
   en: {
@@ -358,6 +360,7 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     common: {
       placeholderImage: "Placeholder image — real photo to be added",
+      skipToContent: "Skip to main content",
     },
   },
 };
