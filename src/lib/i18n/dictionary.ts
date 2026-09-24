@@ -49,6 +49,13 @@ export type Dictionary = {
     ctaAbout: string;
     ctaMedia: string;
     imageAlt: string;
+    slideAlts: string[];
+    slideshowLabel: string;
+    prev: string;
+    next: string;
+    goToSlide: string;
+    pause: string;
+    play: string;
   };
   ctaBand: {
     title: string;
@@ -177,6 +184,18 @@ export const dictionary: Record<Locale, Dictionary> = {
       ctaAbout: "بیشتر بدانید",
       ctaMedia: "مشاهده گالری",
       imageAlt: "نمای بیرونی کارخانه نگین فام طب در مراغه",
+      slideAlts: [
+        "نمای بیرونی کارخانه نگین فام طب در مراغه",
+        "آزمایشگاه نگین فام طب؛ ظروف و تجهیزات شیشه‌ای آزمایشگاهی",
+        "آزمایشگاه نگین فام طب؛ قفسه‌های نمونه و بالن‌های حجمی",
+        "بالن‌های حجمی حاوی نمونه روی قفسه آزمایشگاه",
+      ],
+      slideshowLabel: "تصاویر کارخانه و آزمایشگاه",
+      prev: "اسلاید قبلی",
+      next: "اسلاید بعدی",
+      goToSlide: "رفتن به اسلاید",
+      pause: "توقف نمایش خودکار",
+      play: "پخش خودکار",
     },
     ctaBand: {
       title: "آماده سفارش هستید؟",
@@ -307,6 +326,18 @@ export const dictionary: Record<Locale, Dictionary> = {
       ctaAbout: "Learn More",
       ctaMedia: "View Media",
       imageAlt: "Exterior view of the Negin Fam Teb factory in Maragheh",
+      slideAlts: [
+        "Exterior view of the Negin Fam Teb factory in Maragheh",
+        "Negin Fam Teb laboratory with glassware and lab equipment",
+        "Laboratory shelves with volumetric flasks and sample bottles",
+        "Volumetric flasks with samples on a laboratory shelf",
+      ],
+      slideshowLabel: "Factory and laboratory photos",
+      prev: "Previous slide",
+      next: "Next slide",
+      goToSlide: "Go to slide",
+      pause: "Pause slideshow",
+      play: "Play slideshow",
     },
     ctaBand: {
       title: "Ready to Order?",

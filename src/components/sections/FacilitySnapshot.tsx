@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
+import { FacilitySlideshow } from "@/components/FacilitySlideshow";
 
 export function FacilitySnapshot() {
   const { dict } = useLanguage();
@@ -14,15 +14,7 @@ export function FacilitySnapshot() {
       <Container className="py-16 md:py-24">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
           <Reveal>
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl border border-surface-border bg-surface-700">
-              <Image
-                src="/factory/factory-outside.jpeg"
-                alt={dict.facility.imageAlt}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
+            <FacilitySlideshow />
           </Reveal>
 
           <Reveal delay={120}>

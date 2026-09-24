@@ -27,10 +27,10 @@ export function Header() {
       >
         {dict.common.skipToContent}
       </a>
-      <Container className="flex h-16 items-center justify-between">
+      <Container className="flex h-16 items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
         <Link
           href="/"
-          className="flex items-center gap-2 text-sm font-bold tracking-wide text-ink-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900 rounded"
+          className="flex items-center gap-2 text-sm font-bold tracking-wide md:justify-self-start text-ink-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900 rounded"
         >
           <Image
             src="/logo-mark.png"
@@ -59,7 +59,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 md:gap-3">
+        <div className="flex items-center gap-2 md:justify-self-end md:gap-3">
           <LanguageSwitcher />
 
           <button
