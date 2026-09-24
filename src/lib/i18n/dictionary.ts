@@ -41,6 +41,8 @@ export type Dictionary = {
   why: {
     title: string;
     points: { title: string; desc: string }[];
+    placeholderTag: string;
+    placeholders: { title: string; note: string }[];
   };
   facility: {
     eyebrow: string;
@@ -71,6 +73,7 @@ export type Dictionary = {
     navTitle: string;
     langTitle: string;
     rights: string;
+    blurb: string;
   };
   comingSoon: {
     title: string;
@@ -129,17 +132,17 @@ export const dictionary: Record<Locale, Dictionary> = {
       eyebrow: "تولیدکننده اتانول صنعتی",
       name: "نگین فام طب",
       tagline:
-        "تولید، بسته‌بندی و تأمین اتانول با خلوص و دقت صنعتی — از مراغه تا سراسر ایران.",
+        "نامی معتبر در اتانول صنعتی ایران — تعیین‌کننده استاندارد خلوص، دقت و ظرفیت.",
       ctaPrimary: "مشاهده محصولات",
       ctaSecondary: "درخواست تماس",
     },
     intro: {
       title: "چه می‌کنیم",
-      body: "نگین فام طب تمام مراحل اتانول، از تولید تا تحویل، را زیر یک سقف انجام می‌دهد: تولید صنعتی، بسته‌بندی استاندارد کارتنی و تأمین فله با تانکر برای مشتریان صنعتی و تجاری.",
+      body: "تمام مراحل تولید اتانول را خودمان انجام می‌دهیم — از تولید تا بسته‌بندی و تحویل، همه زیر نظر مستقیم ما.",
       points: [
-        { title: "تولید", desc: "خط تولید صنعتی در مراغه با ظرفیت پیوسته." },
-        { title: "بسته‌بندی", desc: "بطری‌های استاندارد در کارتن‌های ۱۲ عددی." },
-        { title: "تأمین فله", desc: "تحویل با تانکر برای مصارف صنعتی حجیم." },
+        { title: "تولید", desc: "تولید در مقیاس صنعتی، با خط تولید پیوسته در مراغه." },
+        { title: "بسته‌بندی", desc: "بسته‌بندی استاندارد و یکدست — کارتن‌های ۱۲ بطری، آماده ارسال." },
+        { title: "تأمین فله", desc: "تحویل با تانکر، متناسب با نیاز صنعتی حجیم، در سراسر ایران." },
       ],
     },
     grades: {
@@ -148,17 +151,17 @@ export const dictionary: Record<Locale, Dictionary> = {
       items: {
         "70": {
           title: "اتانول ۷۰٪",
-          desc: "مناسب ضدعفونی و مصارف عمومی.",
+          desc: "گزینه‌ای مطمئن برای ضدعفونی و پاک‌سازی سطوح و تجهیزات، مناسب برای مصارف بهداشتی، تجاری، خانگی و عمومی.",
           cta: "مشاهده جزئیات",
         },
         "96": {
           title: "اتانول ۹۶٪",
-          desc: "مناسب مصارف صنعتی و تجاری.",
+          desc: "طراحی‌شده برای کاربردهای صنعتی و تجاری، مناسب تولید، پاک‌سازی و فرآوری در طیف گسترده‌ای از صنایع.",
           cta: "مشاهده جزئیات",
         },
         "998": {
           title: "اتانول ۹۹.۸٪",
-          desc: "خلوص بالا برای کاربردهای صنعتی حساس.",
+          desc: "بالاترین درجه خلوص ما، مناسب برای مصارف صنعتی، آزمایشگاهی و دارویی حساس و فرآیندهای فنی دقیق.",
           cta: "مشاهده جزئیات",
         },
       },
@@ -175,6 +178,13 @@ export const dictionary: Record<Locale, Dictionary> = {
         { title: "ظرفیت تولید", desc: "خط تولید پیوسته در مراغه، آماده سفارش‌های حجیم." },
         { title: "تأمین پایدار", desc: "زنجیره تأمین بدون وقفه برای مشتریان صنعتی." },
         { title: "پشتیبانی مستقیم", desc: "ارتباط مستقیم با تیم فروش در تهران و مراغه." },
+      ],
+      placeholderTag: "نیازمند تکمیل",
+      placeholders: [
+        { title: "دارای مجوز و ثبت رسمی", note: "[جای‌نگه‌دار: جزئیات مجوز و ثبت شرکت را اضافه کنید — وضعیت ثبت رسمی، مجوزهای صنعتی مرتبط]" },
+        { title: "استانداردها و گواهینامه‌ها", note: "[جای‌نگه‌دار: گواهینامه‌های کیفیت یا ایمنی، یا انطباق با استانداردهایی مثل ISO یا وزارت بهداشت را در صورت وجود اضافه کنید]" },
+        { title: "سابقه فعالیت", note: "[جای‌نگه‌دار: مدت زمان فعالیت شرکت را اضافه کنید]" },
+        { title: "آمار تولید", note: "[جای‌نگه‌دار: ارقام واقعی ظرفیت تولید را در صورت تمایل به اشتراک‌گذاری اضافه کنید]" },
       ],
     },
     facility: {
@@ -211,6 +221,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       navTitle: "دسترسی سریع",
       langTitle: "زبان",
       rights: "© {year} نگین فام طب. تمامی حقوق محفوظ است.",
+      blurb: "نگین فام طب تولیدکننده و تأمین‌کننده اتانول در سراسر ایران است، از فروش کارتنی تا سفارش‌های صنعتی فله.",
     },
     comingSoon: {
       title: "به‌زودی",
@@ -271,17 +282,17 @@ export const dictionary: Record<Locale, Dictionary> = {
       eyebrow: "Industrial Ethanol Manufacturer",
       name: "Negin Fam Teb",
       tagline:
-        "Ethanol production, packaging, and bulk supply — engineered for purity and consistency, from Maragheh to across Iran.",
+        "Iran's trusted name in industrial ethanol — setting the standard for purity, precision, and scale.",
       ctaPrimary: "View Products",
       ctaSecondary: "Contact Us",
     },
     intro: {
       title: "What We Do",
-      body: "Negin Fam Teb manages ethanol from production to delivery under one roof: industrial-scale manufacturing, standardized carton packaging, and bulk tanker supply for industrial and commercial buyers.",
+      body: "We handle every stage of ethanol production ourselves — from raw manufacturing to packaging to delivery, in-house and under our own control.",
       points: [
-        { title: "Manufacturing", desc: "Continuous industrial production line in Maragheh." },
-        { title: "Packaging", desc: "Standard bottles in 12-unit cartons." },
-        { title: "Bulk Supply", desc: "Tanker delivery for high-volume industrial demand." },
+        { title: "Manufacturing", desc: "Industrial-scale production, running continuously in Maragheh." },
+        { title: "Packaging", desc: "Consistent, standardized packaging — 12 bottles per carton, ready to ship." },
+        { title: "Bulk Supply", desc: "Tanker delivery built for high-volume industrial demand, wherever you are in Iran." },
       ],
     },
     grades: {
@@ -290,17 +301,17 @@ export const dictionary: Record<Locale, Dictionary> = {
       items: {
         "70": {
           title: "Ethanol 70%",
-          desc: "Suited for disinfection and general use.",
+          desc: "A reliable choice for disinfection and surface cleaning, widely used across healthcare, commercial, household, and general-purpose settings.",
           cta: "View Details",
         },
         "96": {
           title: "Ethanol 96%",
-          desc: "Suited for industrial and commercial use.",
+          desc: "Built for industrial and commercial use, supporting manufacturing, cleaning, and processing across a wide range of sectors.",
           cta: "View Details",
         },
         "998": {
           title: "Ethanol 99.8%",
-          desc: "High purity for sensitive industrial applications.",
+          desc: "Our highest-purity grade, suited for demanding industrial, laboratory, and pharmaceutical applications requiring precision and consistency.",
           cta: "View Details",
         },
       },
@@ -317,6 +328,13 @@ export const dictionary: Record<Locale, Dictionary> = {
         { title: "Production Capacity", desc: "Continuous production line in Maragheh, ready for volume orders." },
         { title: "Reliable Supply", desc: "Uninterrupted supply chain for industrial buyers." },
         { title: "Direct Support", desc: "Direct line to our sales team in Tehran and Maragheh." },
+      ],
+      placeholderTag: "TODO",
+      placeholders: [
+        { title: "Licensed & Registered", note: "[PLACEHOLDER: Add licensing/registration details — company registration status, relevant industry licenses]" },
+        { title: "Industry Standards & Certifications", note: "[PLACEHOLDER: Add any quality/safety certifications or standards compliance — e.g. ISO, GMP, health ministry licensing, whatever actually applies]" },
+        { title: "Years in Operation", note: "[PLACEHOLDER: Add how long the company has been operating]" },
+        { title: "Production Output", note: "[PLACEHOLDER: Add real production volume/capacity figures if we want to share them]" },
       ],
     },
     facility: {
@@ -353,6 +371,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       navTitle: "Quick Links",
       langTitle: "Language",
       rights: "© {year} Negin Fam Teb. All rights reserved.",
+      blurb: "Negin Fam Teb manufactures and supplies ethanol across Iran, from cartoned retail to industrial bulk orders.",
     },
     comingSoon: {
       title: "Coming Soon",

@@ -41,6 +41,22 @@ export function WhyUs() {
             </Reveal>
           ))}
         </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {dict.why.placeholders.map((item, i) => (
+            <Reveal
+              key={item.title}
+              delay={100 + i * 80}
+              className="rounded-xl border border-dashed border-surface-borderStrong bg-surface-900/60 p-6"
+            >
+              <span className="inline-flex items-center rounded-sm border border-dashed border-surface-borderStrong px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-ink-300">
+                {dict.why.placeholderTag}
+              </span>
+              <h3 className="mt-4 text-base font-semibold text-ink-100">{item.title}</h3>
+              <p className="mt-2 text-sm italic leading-relaxed text-ink-300">{item.note}</p>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </section>
   );

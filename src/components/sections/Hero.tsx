@@ -75,7 +75,7 @@ export function Hero() {
           <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-50 md:text-6xl">
             {dict.hero.name}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink-300 md:text-lg">
+          <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-300 md:text-lg">
             {dict.hero.tagline}
           </p>
 

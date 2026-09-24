@@ -33,7 +33,7 @@ export function Footer() {
             />
             <p className="text-sm font-bold tracking-wide text-ink-50">{dict.hero.name}</p>
           </div>
-          <p className="mt-3 max-w-sm text-sm text-ink-400">{dict.hero.tagline}</p>
+          <p className="mt-3 max-w-sm text-sm text-ink-400">{dict.footer.blurb}</p>
         </div>
 
         <div>
