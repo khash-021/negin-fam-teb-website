@@ -4,6 +4,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { Reveal } from "@/components/Reveal";
 
 export function FacilitySnapshot() {
   const { dict } = useLanguage();
@@ -12,9 +13,11 @@ export function FacilitySnapshot() {
     <section className="border-b border-surface-border bg-surface-800">
       <Container className="py-16 md:py-24">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-          <ImagePlaceholder label="Maragheh Factory — Exterior / Line" />
+          <Reveal>
+            <ImagePlaceholder label="Maragheh Factory — Exterior / Line" />
+          </Reveal>
 
-          <div>
+          <Reveal delay={120}>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
               {dict.facility.eyebrow}
             </p>
@@ -33,7 +36,7 @@ export function FacilitySnapshot() {
                 {dict.facility.ctaMedia}
               </Button>
             </div>
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

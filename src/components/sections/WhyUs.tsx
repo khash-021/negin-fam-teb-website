@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/Reveal";
 
 const icons = [
   <path key="purity" d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round" />,
@@ -17,14 +18,17 @@ export function WhyUs() {
     <section className="relative border-b border-surface-border bg-surface-900">
       <div className="pointer-events-none absolute inset-0 bg-line-grid opacity-50" />
       <Container className="relative py-16 md:py-24">
-        <h2 className="max-w-md text-3xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-4xl">
-          {dict.why.title}
-        </h2>
+        <Reveal className="max-w-md">
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-4xl">
+            {dict.why.title}
+          </h2>
+        </Reveal>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {dict.why.points.map((point, i) => (
-            <div
+            <Reveal
               key={point.title}
+              delay={100 + i * 80}
               className="rounded-xl border border-surface-border bg-surface-800 p-6 shadow-card transition-colors duration-200 hover:border-brand-500/40"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-md bg-brand-500/10 text-brand-400 ring-1 ring-inset ring-brand-500/25">
@@ -34,7 +38,7 @@ export function WhyUs() {
               </span>
               <h3 className="mt-5 text-base font-semibold text-ink-50">{point.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-400">{point.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

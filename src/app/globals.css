@@ -34,3 +34,28 @@
     @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-surface-900;
   }
 }
+
+html[data-locale-pending] body {
+  visibility: hidden;
+  animation: locale-pending-failsafe 0s 2s forwards;
+}
+
+@keyframes locale-pending-failsafe {
+  to {
+    visibility: visible;
+  }
+}
+
+.hero-parallax {
+  transform: translate3d(0, calc(var(--p, 0) * 56px), 0);
+  opacity: calc(1 - var(--p, 0) * 0.5);
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-parallax {
+    transform: none;
+    opacity: 1;
+    will-change: auto;
+  }
+}

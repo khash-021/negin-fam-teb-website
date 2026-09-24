@@ -16,6 +16,7 @@ const vazirmatn = localFont({
 export const metadata: Metadata = {
   title: dictionary.fa.meta.title,
   description: dictionary.fa.meta.description,
+  icons: { icon: { url: "/logo-mark.png", type: "image/png" } },
 };
 
 export default function RootLayout({
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl" className={vazirmatn.variable}>
+    <html lang="fa" dir="rtl" className={vazirmatn.variable} suppressHydrationWarning>
       <body>
         <Script
           id="nft-no-flash-locale"

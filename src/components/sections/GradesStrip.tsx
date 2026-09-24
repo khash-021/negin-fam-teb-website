@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Container } from "@/components/Container";
 import { GradeCardActions } from "@/components/GradeCardActions";
+import { Reveal } from "@/components/Reveal";
 import { grades } from "@/data/grades";
 
 export function GradesStrip() {
@@ -13,21 +14,22 @@ export function GradesStrip() {
     <section className="relative overflow-hidden border-b border-surface-border bg-surface-800">
       <div className="pointer-events-none absolute inset-0 bg-grid-fade-soft" />
       <Container className="relative py-16 md:py-24">
-        <div className="max-w-xl">
+        <Reveal className="max-w-xl">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-4xl">
             {dict.grades.title}
           </h2>
           <p className="mt-4 text-sm text-ink-400 md:text-base">
             {dict.grades.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {grades.map((grade) => {
+          {grades.map((grade, i) => {
             const item = dict.grades.items[grade.id];
             return (
-              <div
+              <Reveal
                 key={grade.id}
+                delay={100 + i * 90}
                 className="group flex flex-col justify-between rounded-xl border border-surface-border bg-surface-700 p-7 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-500/50 hover:shadow-glow-red"
               >
                 <div>
@@ -62,7 +64,7 @@ export function GradesStrip() {
                 </div>
 
                 <GradeCardActions />
-              </div>
+              </Reveal>
             );
           })}
         </div>
