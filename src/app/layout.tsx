@@ -4,6 +4,7 @@ import Script from "next/script";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import { noFlashScript } from "@/lib/i18n/no-flash-script";
 import { dictionary } from "@/lib/i18n/dictionary";
+import { IntroOverlay } from "@/components/IntroOverlay";
 import "./globals.css";
 
 const vazirmatn = localFont({
@@ -32,6 +33,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: noFlashScript }}
         />
+        <IntroOverlay />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

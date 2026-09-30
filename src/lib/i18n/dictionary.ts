@@ -109,6 +109,11 @@ export type Dictionary = {
   common: {
     placeholderImage: string;
     skipToContent: string;
+    pendingVerification: string;
+  };
+  proof: {
+    stats: { value: string; label: string }[];
+    badges: { label: string; pending?: boolean }[];
   };
 };
 
@@ -261,6 +266,14 @@ export const dictionary: Record<Locale, Dictionary> = {
     common: {
       placeholderImage: "تصویر جایگزین — عکس واقعی بعداً اضافه می‌شود",
       skipToContent: "پرش به محتوای اصلی",
+      pendingVerification: "در انتظار تأیید",
+    },
+    proof: {
+      stats: [
+        { value: "۳", label: "درجه خلوص اتانول" },
+        { value: "۱", label: "کارخانه در مراغه" },
+      ],
+      badges: [{ label: "دفتر تهران، کارخانه مراغه" }],
     },
   },
   en: {
@@ -411,6 +424,14 @@ export const dictionary: Record<Locale, Dictionary> = {
     common: {
       placeholderImage: "Placeholder image — real photo to be added",
       skipToContent: "Skip to main content",
+      pendingVerification: "Pending Verification",
+    },
+    proof: {
+      stats: [
+        { value: "3", label: "Ethanol Purity Grades" },
+        { value: "1", label: "Factory in Maragheh" },
+      ],
+      badges: [{ label: "Tehran Office, Maragheh Factory" }],
     },
   },
 };
