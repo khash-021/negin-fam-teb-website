@@ -158,9 +158,9 @@ export type Dictionary = {
 export const dictionary: Record<Locale, Dictionary> = {
   fa: {
     meta: {
-      title: "نگین فام طب | تولیدکننده اتانول صنعتی",
+      title: "نگین فام طب | تولیدکننده تخصصی اتانول طبی و صنعتی",
       description:
-        "تولید، بسته‌بندی و تأمین اتانول ۷۰٪، ۹۶٪ و ۹۹.۸٪ — کارخانه مراغه، دفتر تهران.",
+        "تولید، بسته‌بندی و تأمین اتانول طبی و صنعتی با خلوص ۷۰٪، ۹۶٪ و ۹۹.۸٪ — کارخانه مراغه، دفتر مرکزی تهران.",
     },
     nav: {
       home: "خانه",
@@ -171,12 +171,12 @@ export const dictionary: Record<Locale, Dictionary> = {
       languageSwitch: "EN",
     },
     hero: {
-      eyebrow: "تولیدکننده اتانول صنعتی",
+      eyebrow: "تولیدکننده تخصصی اتانول طبی و صنعتی",
       name: "نگین فام طب",
       tagline:
-        "نامی معتبر در اتانول صنعتی ایران — تعیین‌کننده استاندارد خلوص، دقت و ظرفیت.",
+        "نامی معتبر در صنعت الکل‌سازی ایران؛ کارخانه در مراغه، دفتر مرکزی در تهران، و اتانول با خلوص بالا برای صنایع کشور.",
       ctaPrimary: "مشاهده محصولات",
-      ctaSecondary: "درخواست تماس",
+      ctaSecondary: "استعلام قیمت",
     },
     intro: {
       title: "چه می‌کنیم",
@@ -373,9 +373,9 @@ export const dictionary: Record<Locale, Dictionary> = {
   },
   en: {
     meta: {
-      title: "Negin Fam Teb | Industrial Ethanol Manufacturer",
+      title: "Negin Fam Teb | Medical & Industrial Ethanol Manufacturer",
       description:
-        "Manufacturing, packaging, and bulk supply of 70%, 96%, and 99.8% ethanol — Maragheh factory, Tehran office.",
+        "Manufacturing, packaging, and supply of medical and industrial ethanol at 70%, 96%, and 99.8% purity — Maragheh factory, Tehran head office.",
     },
     nav: {
       home: "Home",
@@ -386,12 +386,12 @@ export const dictionary: Record<Locale, Dictionary> = {
       languageSwitch: "فا",
     },
     hero: {
-      eyebrow: "Industrial Ethanol Manufacturer",
+      eyebrow: "Specialized Manufacturer of Medical & Industrial Ethanol",
       name: "Negin Fam Teb",
       tagline:
-        "Iran's trusted name in industrial ethanol — setting the standard for purity, precision, and scale.",
+        "A trusted name in Iran's ethanol industry: factory in Maragheh, head office in Tehran, and high-purity ethanol for the country's industries.",
       ctaPrimary: "View Products",
-      ctaSecondary: "Contact Us",
+      ctaSecondary: "Request a Quote",
     },
     intro: {
       title: "What We Do",

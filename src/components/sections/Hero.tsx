@@ -1,73 +1,41 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { Container } from "@/components/Container";
-import { Button } from "@/components/Button";
+
+const arrow = (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 20 20"
+    className="h-4 w-4 rtl:-scale-x-100"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M4 10h12M11 5l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 export function Hero() {
   const { dict } = useLanguage();
-  const sectionRef = useRef<HTMLElement>(null);
-  const layerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const layer = layerRef.current;
-    if (!section || !layer) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    let height = Math.max(section.offsetHeight, 1);
-    let frame = 0;
-    let listening = false;
-
-    const update = () => {
-      frame = 0;
-      const progress = Math.min(Math.max(window.scrollY / height, 0), 1);
-      layer.style.setProperty("--p", progress.toFixed(3));
-    };
-    const onScroll = () => {
-      if (!frame) frame = requestAnimationFrame(update);
-    };
-    const onResize = () => {
-      height = Math.max(section.offsetHeight, 1);
-      onScroll();
-    };
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !listening) {
-        window.addEventListener("scroll", onScroll, { passive: true });
-        listening = true;
-        onScroll();
-      } else if (!entry.isIntersecting && listening) {
-        window.removeEventListener("scroll", onScroll);
-        listening = false;
-      }
-    });
-    observer.observe(section);
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
-      cancelAnimationFrame(frame);
-    };
-  }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden border-b border-surface-border bg-surface-950"
-    >
-      <div
-        ref={layerRef}
-        className="hero-parallax pointer-events-none absolute inset-x-0 -inset-y-24"
-      >
-        <div className="absolute inset-0 bg-dot-grid opacity-60" />
-      </div>
+    <section className="relative overflow-hidden border-b border-surface-border bg-surface-950">
+      <Image
+        src="/factory/factory-outside.webp"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-surface-950/80" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_0%,rgba(218,46,42,0.16),transparent_70%)]" />
 
-      <Container className="relative py-20 text-center md:py-28">
+      <Container className="relative py-24 text-center md:py-32">
         <div className="mx-auto max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
             {dict.hero.eyebrow}
@@ -75,17 +43,25 @@ export function Hero() {
           <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-50 md:text-6xl">
             {dict.hero.name}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-300 md:text-lg">
+          <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-200 md:text-lg">
             {dict.hero.tagline}
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/products" variant="primary">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/products"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-glow-red-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950"
+            >
               {dict.hero.ctaPrimary}
-            </Button>
-            <Button href="/contact" variant="secondary">
+              {arrow}
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-white bg-black/30 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-colors duration-200 hover:bg-black/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-950"
+            >
               {dict.hero.ctaSecondary}
-            </Button>
+              {arrow}
+            </Link>
           </div>
         </div>
       </Container>

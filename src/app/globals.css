@@ -55,20 +55,9 @@ html[data-locale-pending] body {
   transform: translate3d(0, 12px, 0);
 }
 
-.hero-parallax {
-  transform: translate3d(0, calc(var(--p, 0) * 56px), 0);
-  opacity: calc(1 - var(--p, 0) * 0.5);
-  will-change: transform, opacity;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .reveal.reveal-hidden {
     opacity: 1;
     transform: none;
-  }
-  .hero-parallax {
-    transform: none;
-    opacity: 1;
-    will-change: auto;
   }
 }
