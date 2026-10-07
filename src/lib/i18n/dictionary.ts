@@ -111,6 +111,18 @@ export type Dictionary = {
       errorPhone: string;
     };
   };
+  about: {
+    title: string;
+    intro: string;
+    productsTitle: string;
+    productsParagraph1: string;
+    productsParagraph2: string;
+    badges: { title: string; subtitle: string }[];
+    mission: { title: string; body: string };
+    vision: { title: string; body: string };
+    registrationTitle: string;
+    registrationRows: { label: string; value: string; numeric?: boolean }[];
+  };
   common: {
     placeholderImage: string;
     skipToContent: string;
@@ -268,6 +280,36 @@ export const dictionary: Record<Locale, Dictionary> = {
         errorRequired: "این فیلد الزامی است",
         errorPhone: "شماره تماس معتبر وارد کنید",
       },
+    },
+    about: {
+      title: "نامی معتبر در صنعت الکل‌سازی ایران",
+      intro:
+        "در دل صنعت پویا و رو به رشد اتانول، نگین فام طب به عنوان یک نام آشنا و معتبر درخشیده است. از آغاز فعالیت، ما با تعهد به نوآوری و کیفیت، توانسته‌ایم جایگاهی برجسته در تولید اتانول‌های صنعتی، طبی و سوختی به دست آوریم.",
+      productsTitle: "محصولات با کیفیت برای صنایع متنوع",
+      productsParagraph1:
+        "محصولات ما، که با دقت و مهارت تولید می‌شوند، نه تنها نیازهای متنوع صنایع دارویی، غذایی، آرایشی و بهداشتی را برآورده می‌کنند، بلکه در تقویت زیرساخت‌های صنعتی کشور نیز نقشی کلیدی ایفا می‌کنند. ما با افتخار اعلام می‌کنیم که محصولات نگین فام طب در سراسر ایران شناخته شده و مورد استفاده قرار می‌گیرند.",
+      productsParagraph2:
+        "این موفقیت را مدیون تیمی از متخصصان متعهد و فناوری‌های پیشرفته هستیم. ما در نگین فام طب، به دنبال ایجاد ارزش‌های پایدار برای مشتریان و جامعه‌ای هستیم که در آن فعالیت می‌کنیم، و همواره در جستجوی راه‌هایی برای بهبود و نوآوری در محصولات و خدمات خود هستیم.",
+      badges: [
+        { title: "کیفیت تضمین شده", subtitle: "استانداردهای دارویی و بهداشتی" },
+        { title: "تیم متخصص", subtitle: "مهندسان و کارشناسان مجرب" },
+      ],
+      mission: {
+        title: "ماموریت ما",
+        body: "تامین اتانول با خلوص بالا و کیفیت تضمین‌شده برای صنایع دارویی، غذایی، آرایشی و بهداشتی کشور، با رعایت کامل استانداردهای ملی و بین‌المللی. ما متعهد به ارائه محصولاتی سالم، غیرخوراکی و فاقد متانول هستیم که سلامت جامعه را تضمین می‌کنند.",
+      },
+      vision: {
+        title: "چشم‌انداز ما",
+        body: "تبدیل شدن به برترین تولیدکننده اتانول در ایران و منطقه، با تمرکز بر نوآوری مستمر، توسعه فناوری‌های پیشرفته تولید، و ایجاد ارزش‌های پایدار برای مشتریان و جامعه. ما در جستجوی راه‌های جدید برای بهبود محصولات و خدمات خود هستیم.",
+      },
+      registrationTitle: "اطلاعات ثبت رسمی شرکت",
+      registrationRows: [
+        { label: "شماره ثبت", value: "۳۲۶۹", numeric: true },
+        { label: "شناسه ملی", value: "۱۴۰۰۰۱۷۴۶۲۸", numeric: true },
+        { label: "کد اقتصادی", value: "۴۱۱۴۱۸۸۴۵۴۹۳", numeric: true },
+        { label: "نوع شرکت", value: "سهامی خاص" },
+        { label: "نام تجاری", value: "الکل سهند مراغه" },
+      ],
     },
     common: {
       placeholderImage: "تصویر جایگزین — عکس واقعی بعداً اضافه می‌شود",
@@ -427,6 +469,36 @@ export const dictionary: Record<Locale, Dictionary> = {
         errorRequired: "This field is required",
         errorPhone: "Enter a valid phone number",
       },
+    },
+    about: {
+      title: "A Trusted Name in Iran's Ethanol Industry",
+      intro:
+        "Negin Fam Teb is a familiar and trusted name in Iran's fast-growing ethanol industry. Since the start of our operations, our commitment to innovation and quality has earned us a leading position in producing industrial, medical, and fuel ethanol.",
+      productsTitle: "Quality Products for Diverse Industries",
+      productsParagraph1:
+        "Our products are made with precision and skill. They meet the varied needs of the pharmaceutical, food, cosmetics, and hygiene industries, and they play a key part in strengthening Iran's industrial infrastructure. We are proud that Negin Fam Teb products are known and used across the country.",
+      productsParagraph2:
+        "We owe this success to a dedicated team of specialists and to advanced technology. At Negin Fam Teb, we aim to create lasting value for our customers and the community we serve, and we keep looking for ways to improve our products and services.",
+      badges: [
+        { title: "Guaranteed Quality", subtitle: "Pharmaceutical and health standards" },
+        { title: "Expert Team", subtitle: "Experienced engineers and technical specialists" },
+      ],
+      mission: {
+        title: "Our Mission",
+        body: "To supply high-purity ethanol of guaranteed quality to Iran's pharmaceutical, food, cosmetics, and hygiene industries, in full compliance with national and international standards. We are committed to delivering products that are safe, non-consumable, and methanol-free, guaranteeing the health of the community.",
+      },
+      vision: {
+        title: "Our Vision",
+        body: "To become the top ethanol producer in Iran and the region, with a focus on continuous innovation, advanced production technology, and lasting value for our customers and community. We are always looking for new ways to improve our products and services.",
+      },
+      registrationTitle: "Official Company Registration",
+      registrationRows: [
+        { label: "Registration No.", value: "3269", numeric: true },
+        { label: "National ID", value: "14000174628", numeric: true },
+        { label: "Economic Code", value: "411418845493", numeric: true },
+        { label: "Company Type", value: "Private Joint Stock Company" },
+        { label: "Brand Name", value: "Sahand Maragheh Alcohol" },
+      ],
     },
     common: {
       placeholderImage: "Placeholder image — real photo to be added",

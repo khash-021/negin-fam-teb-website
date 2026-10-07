@@ -20,9 +20,9 @@ Next.js 14 (App Router) + Tailwind + TypeScript. Farsi default language, English
 ## Site status
 - Home page copy and structure are being reworked; expect changes.
 - Nav (Header.tsx): Home, About, Products, Media, Contact — Shop was removed from the nav
-- Built: Home, Products (placeholder cards, no detail pages yet)
-- Contact: form UI is complete but NOT wired to a real email backend — submit just simulates a delay and shows a success state
-- Stub (ComingSoon placeholder) pages: About, Media, Shop — /shop route still exists but isn't linked from nav
+- Built: Home, Products (placeholder cards, no detail pages yet), About (story, mission/vision, registration block)
+- Contact: real addresses, phone numbers, and email are in place. Form has four fields (name, phone, company, message) but is still NOT wired to a real sending backend — submit just simulates a delay and shows a success state
+- Stub (ComingSoon placeholder) pages: Media, Shop — /shop route still exists but isn't linked from nav
 - Deployed to Vercel (negin-fam-teb-website.vercel.app), auto-deploys on git push to main
 - Eventually moving to Arvan Cloud (Iranian VPS) for production — keep hosting-agnostic where possible
 
