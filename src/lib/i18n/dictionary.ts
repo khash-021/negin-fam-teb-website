@@ -68,8 +68,12 @@ export type Dictionary = {
   footer: {
     tehranOfficeLabel: string;
     tehranAddress: string;
+    tehranPhone: string;
     maraghehFactoryLabel: string;
     maraghehAddress: string;
+    maraghehPhone: string;
+    emailLabel: string;
+    email: string;
     navTitle: string;
     langTitle: string;
     rights: string;
@@ -84,17 +88,18 @@ export type Dictionary = {
     title: string;
     intro: string;
     infoTitle: string;
-    phoneLabel: string;
-    phonePlaceholder: string;
+    hoursTitle: string;
+    tehranHoursLines: string[];
+    maraghehHoursLines: string[];
+    formTitle: string;
+    formIntro: string;
     form: {
       nameLabel: string;
       namePlaceholder: string;
-      emailLabel: string;
-      emailPlaceholder: string;
       phoneLabel: string;
       phonePlaceholder: string;
-      subjectLabel: string;
-      subjectOptions: { value: string; label: string }[];
+      companyLabel: string;
+      optionalTag: string;
       messageLabel: string;
       messagePlaceholder: string;
       submit: string;
@@ -103,7 +108,7 @@ export type Dictionary = {
       successBody: string;
       sendAnother: string;
       errorRequired: string;
-      errorEmail: string;
+      errorPhone: string;
     };
   };
   common: {
@@ -219,10 +224,14 @@ export const dictionary: Record<Locale, Dictionary> = {
       ctaBulk: "استعلام فله",
     },
     footer: {
-      tehranOfficeLabel: "دفتر تهران",
-      tehranAddress: "تهران، ایران — آدرس دقیق به‌زودی",
+      tehranOfficeLabel: "دفتر مرکزی تهران",
+      tehranAddress: "تهران، خیابان استاد نجات‌اللهی (ویلا)، خیابان صارمی غربی، شماره ۴۴، طبقه ۳، واحد ۵",
+      tehranPhone: "۰۲۱-۸۸۳۰۴۵۴۵",
       maraghehFactoryLabel: "کارخانه مراغه",
-      maraghehAddress: "مراغه، آذربایجان‌شرقی — آدرس دقیق به‌زودی",
+      maraghehAddress: "آذربایجان شرقی، مراغه، کیلومتر ۱۵ جاده مراغه-تهران، بعد از پلیس راه",
+      maraghehPhone: "۰۴۱-۳۷۳۲۵۲۰۹",
+      emailLabel: "ایمیل",
+      email: "neginfamtebco@gmail.com",
       navTitle: "دسترسی سریع",
       langTitle: "زبان",
       rights: "© {year} نگین فام طب. تمامی حقوق محفوظ است.",
@@ -237,30 +246,27 @@ export const dictionary: Record<Locale, Dictionary> = {
       title: "تماس با ما",
       intro: "برای درخواست‌های عمومی یا سفارش‌های فله/تانکری با ما در تماس باشید.",
       infoTitle: "اطلاعات تماس",
-      phoneLabel: "تلفن",
-      phonePlaceholder: "شماره تماس به‌زودی",
+      hoursTitle: "ساعات کاری",
+      tehranHoursLines: ["شنبه تا چهارشنبه ۷:۰۰ - ۱۸:۰۰", "پنجشنبه ۷:۰۰ - ۱۳:۰۰", "جمعه تعطیل"],
+      maraghehHoursLines: ["شنبه تا پنجشنبه: ۷ صبح تا ۶ شب"],
+      formTitle: "فرم درخواست همکاری",
+      formIntro: "فرم زیر را تکمیل کنید تا کارشناسان ما با شما تماس بگیرند.",
       form: {
-        nameLabel: "نام",
-        namePlaceholder: "نام و نام خانوادگی",
-        emailLabel: "ایمیل",
-        emailPlaceholder: "you@example.com",
-        phoneLabel: "تلفن (اختیاری)",
-        phonePlaceholder: "۰912xxxxxxx",
-        subjectLabel: "موضوع",
-        subjectOptions: [
-          { value: "general", label: "درخواست عمومی" },
-          { value: "bulk", label: "سفارش فله/تانکری" },
-          { value: "product", label: "سوال درباره محصول" },
-        ],
-        messageLabel: "پیام",
-        messagePlaceholder: "پیام خود را بنویسید...",
-        submit: "ارسال پیام",
+        nameLabel: "نام و نام خانوادگی",
+        namePlaceholder: "مثال: علی محمدی",
+        phoneLabel: "شماره تماس",
+        phonePlaceholder: "مثال: 09123456789",
+        companyLabel: "نام شرکت / سازمان",
+        optionalTag: "اختیاری",
+        messageLabel: "درخواست شما",
+        messagePlaceholder: "درخواست خود را به طور کامل شرح دهید. شامل نوع محصول، حجم مورد نیاز و...",
+        submit: "ارسال درخواست",
         submitting: "در حال ارسال...",
-        successTitle: "پیام شما ارسال شد",
+        successTitle: "درخواست شما ارسال شد",
         successBody: "با تشکر — به‌زودی با شما تماس می‌گیریم.",
-        sendAnother: "ارسال پیام دیگر",
+        sendAnother: "ارسال درخواست دیگر",
         errorRequired: "این فیلد الزامی است",
-        errorEmail: "یک ایمیل معتبر وارد کنید",
+        errorPhone: "شماره تماس معتبر وارد کنید",
       },
     },
     common: {
@@ -377,10 +383,14 @@ export const dictionary: Record<Locale, Dictionary> = {
       ctaBulk: "Bulk Inquiry",
     },
     footer: {
-      tehranOfficeLabel: "Tehran Office",
-      tehranAddress: "Tehran, Iran — exact address coming soon",
+      tehranOfficeLabel: "Tehran Head Office",
+      tehranAddress: "Unit 5, 3rd Floor, No. 44, West Saremi St., Ostad Nejatollahi St., Tehran, Iran",
+      tehranPhone: "021-88304545",
       maraghehFactoryLabel: "Maragheh Factory",
-      maraghehAddress: "Maragheh, East Azerbaijan — exact address coming soon",
+      maraghehAddress: "East Azerbaijan, Maragheh, 15th km of Maragheh-Tehran road, after the road police",
+      maraghehPhone: "041-37325209",
+      emailLabel: "Email",
+      email: "neginfamtebco@gmail.com",
       navTitle: "Quick Links",
       langTitle: "Language",
       rights: "© {year} Negin Fam Teb. All rights reserved.",
@@ -395,30 +405,27 @@ export const dictionary: Record<Locale, Dictionary> = {
       title: "Contact",
       intro: "Reach out for general inquiries or bulk and tanker orders.",
       infoTitle: "Contact Information",
-      phoneLabel: "Phone",
-      phonePlaceholder: "Phone number coming soon",
+      hoursTitle: "Working hours",
+      tehranHoursLines: ["Saturday to Wednesday 7:00 - 18:00", "Thursday 7:00 - 13:00", "Friday closed"],
+      maraghehHoursLines: ["Saturday to Thursday: 7 a.m. to 6 p.m."],
+      formTitle: "Collaboration Request Form",
+      formIntro: "Complete the form below and our team will contact you.",
       form: {
-        nameLabel: "Name",
-        namePlaceholder: "Full name",
-        emailLabel: "Email",
-        emailPlaceholder: "you@example.com",
-        phoneLabel: "Phone (optional)",
-        phonePlaceholder: "+98 912 xxx xxxx",
-        subjectLabel: "Subject",
-        subjectOptions: [
-          { value: "general", label: "General Inquiry" },
-          { value: "bulk", label: "Bulk/Tanker Order" },
-          { value: "product", label: "Product Question" },
-        ],
-        messageLabel: "Message",
-        messagePlaceholder: "Write your message...",
-        submit: "Send Message",
+        nameLabel: "Full name",
+        namePlaceholder: "Example: Ali Mohammadi",
+        phoneLabel: "Phone number",
+        phonePlaceholder: "Example: 09123456789",
+        companyLabel: "Company / organization",
+        optionalTag: "Optional",
+        messageLabel: "Your request",
+        messagePlaceholder: "Describe your request in full. Include the product type, required volume, etc.",
+        submit: "Send Request",
         submitting: "Sending...",
-        successTitle: "Message sent",
+        successTitle: "Your request has been sent",
         successBody: "Thanks — we'll be in touch soon.",
-        sendAnother: "Send another message",
+        sendAnother: "Send another request",
         errorRequired: "This field is required",
-        errorEmail: "Enter a valid email address",
+        errorPhone: "Enter a valid phone number",
       },
     },
     common: {

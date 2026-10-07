@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { phoneLinks, emailLink } from "@/data/contact";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
@@ -41,11 +42,36 @@ export function Footer() {
             {dict.footer.tehranOfficeLabel}
           </h3>
           <p className="mt-2 text-sm text-ink-300">{dict.footer.tehranAddress}</p>
+          <a
+            href={phoneLinks.tehran}
+            dir="ltr"
+            className="mt-1 inline-block text-sm text-ink-300 transition-colors hover:text-brand-400"
+          >
+            {dict.footer.tehranPhone}
+          </a>
 
           <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink-400">
             {dict.footer.maraghehFactoryLabel}
           </h3>
           <p className="mt-2 text-sm text-ink-300">{dict.footer.maraghehAddress}</p>
+          <a
+            href={phoneLinks.maragheh}
+            dir="ltr"
+            className="mt-1 inline-block text-sm text-ink-300 transition-colors hover:text-brand-400"
+          >
+            {dict.footer.maraghehPhone}
+          </a>
+
+          <h3 className="mt-6 text-xs font-semibold uppercase tracking-wide text-ink-400">
+            {dict.footer.emailLabel}
+          </h3>
+          <a
+            href={emailLink}
+            dir="ltr"
+            className="mt-2 inline-block text-sm text-ink-300 transition-colors hover:text-brand-400"
+          >
+            {dict.footer.email}
+          </a>
         </div>
 
         <div>

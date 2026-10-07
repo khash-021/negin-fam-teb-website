@@ -1,4 +1,6 @@
 export const phoneLinks = {
-  tehran: "tel:+982188304545",
-  maragheh: "tel:+984137325209",
+  tehran: "tel:02188304545",
+  maragheh: "tel:04137325209",
 };
+
+export const emailLink = "mailto:neginfamtebco@gmail.com";
