@@ -6,7 +6,15 @@ import { useEffect, useRef } from "react";
 const HOLD_MS = 200;
 const MOVE_TOLERANCE_PX = 8;
 
-export function ProductImage({ src, alt }: { src: string; alt: string }) {
+export function ProductImage({
+  src,
+  alt,
+  badge,
+}: {
+  src: string;
+  alt: string;
+  badge?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -79,6 +87,11 @@ export function ProductImage({ src, alt }: { src: string; alt: string }) {
         e.currentTarget.style.setProperty("--zoom-y", `${((e.clientY - rect.top) / rect.height) * 100}%`);
       }}
     >
+      {badge && (
+        <span className="pointer-events-none absolute start-3 top-3 z-10 inline-flex items-center rounded-full border border-brand-500/30 bg-brand-500/15 px-2.5 py-1 text-[11px] font-semibold text-brand-200 backdrop-blur-sm">
+          {badge}
+        </span>
+      )}
       <Image
         src={src}
         alt={alt}

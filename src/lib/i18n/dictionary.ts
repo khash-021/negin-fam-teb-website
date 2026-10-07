@@ -12,7 +12,6 @@ export type Dictionary = {
     about: string;
     products: string;
     media: string;
-    shop: string;
     contact: string;
     languageSwitch: string;
   };
@@ -31,11 +30,34 @@ export type Dictionary = {
   grades: {
     title: string;
     subtitle: string;
-    items: Record<GradeId, { title: string; desc: string; cta: string }>;
-    orderNow: string;
+    items: Record<
+      GradeId,
+      {
+        title: string;
+        subtitle: string;
+        desc: string;
+        cta: string;
+        badge: string;
+        purity: string;
+        appearance: string;
+        packaging: string;
+        use: string;
+      }
+    >;
+    specLabels: {
+      purity: string;
+      formula: string;
+      appearance: string;
+      packaging: string;
+      use: string;
+    };
+    chemicalFormula: string;
+    requestQuote: string;
+    notice: string;
   };
-  productsBanner: {
+  productsCta: {
     title: string;
+    body: string;
     cta: string;
   };
   why: {
@@ -62,8 +84,7 @@ export type Dictionary = {
   ctaBand: {
     title: string;
     body: string;
-    ctaCartons: string;
-    ctaBulk: string;
+    cta: string;
   };
   footer: {
     tehranOfficeLabel: string;
@@ -146,7 +167,6 @@ export const dictionary: Record<Locale, Dictionary> = {
       about: "درباره ما",
       products: "محصولات",
       media: "گالری",
-      shop: "فروشگاه",
       contact: "تماس با ما",
       languageSwitch: "EN",
     },
@@ -173,25 +193,53 @@ export const dictionary: Record<Locale, Dictionary> = {
       items: {
         "70": {
           title: "اتانول ۷۰٪",
+          subtitle: "الکل اتیلیک طبی ۷۰ درصد (حجمی)",
           desc: "گزینه‌ای مطمئن برای ضدعفونی و پاک‌سازی سطوح و تجهیزات، مناسب برای مصارف بهداشتی، تجاری، خانگی و عمومی.",
           cta: "مشاهده جزئیات",
+          badge: "محبوب",
+          purity: "۷۰٪ حجمی",
+          appearance: "مایع بی‌رنگ و شفاف",
+          packaging: "بطری ۱ لیتری در کارتن ۱۲ عددی و فله",
+          use: "ضدعفونی و مصارف بهداشتی",
         },
         "96": {
           title: "اتانول ۹۶٪",
+          subtitle: "الکل اتیلیک طبی ۹۶ درصد (حجمی)",
           desc: "طراحی‌شده برای کاربردهای صنعتی و تجاری، مناسب تولید، پاک‌سازی و فرآوری در طیف گسترده‌ای از صنایع.",
           cta: "مشاهده جزئیات",
+          badge: "پرفروش",
+          purity: "۹۶٪ حجمی",
+          appearance: "مایع بی‌رنگ و شفاف",
+          packaging: "بطری ۱ لیتری در کارتن ۱۲ عددی و فله",
+          use: "صنعتی و تجاری، تولید و پاک‌سازی",
         },
         "998": {
           title: "اتانول ۹۹.۸٪",
+          subtitle: "الکل اتیلیک ۹۹/۸ درصد (مطلق)",
           desc: "بالاترین درجه خلوص ما، مناسب برای مصارف صنعتی، آزمایشگاهی و دارویی حساس و فرآیندهای فنی دقیق.",
           cta: "مشاهده جزئیات",
+          badge: "خلوص بالا",
+          purity: "۹۹.۸٪ (مطلق)",
+          appearance: "مایع بی‌رنگ و شفاف",
+          packaging: "بطری ۱ لیتری در کارتن ۱۲ عددی و فله",
+          use: "آزمایشگاهی، دارویی و فنی دقیق",
         },
       },
-      orderNow: "سفارش آنلاین",
+      specLabels: {
+        purity: "خلوص",
+        formula: "فرمول شیمیایی",
+        appearance: "ظاهر",
+        packaging: "بسته‌بندی",
+        use: "کاربرد",
+      },
+      chemicalFormula: "C₂H₅OH · CAS 64-17-5",
+      requestQuote: "استعلام قیمت",
+      notice: "مایع قابل اشتعال. دور از حرارت و شعله نگهداری شود.",
     },
-    productsBanner: {
-      title: "خرید کارتنی آنلاین — ارسال به سراسر ایران.",
-      cta: "ورود به فروشگاه",
+    productsCta: {
+      title: "به سفارش اختصاصی نیاز دارید؟",
+      body: "برای سفارش فله‌ای، قراردادهای صنعتی یا محصول با مشخصات فنی خاص با کارشناسان فروش ما تماس بگیرید.",
+      cta: "تماس با کارشناسان فروش",
     },
     why: {
       title: "چرا نگین فام طب",
@@ -231,9 +279,8 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     ctaBand: {
       title: "آماده سفارش هستید؟",
-      body: "برای خرید کارتنی به فروشگاه مراجعه کنید یا برای سفارش فله با ما تماس بگیرید.",
-      ctaCartons: "سفارش کارتنی",
-      ctaBulk: "استعلام فله",
+      body: "برای سفارش کارتنی یا فله با ما تماس بگیرید.",
+      cta: "استعلام قیمت",
     },
     footer: {
       tehranOfficeLabel: "دفتر مرکزی تهران",
@@ -335,7 +382,6 @@ export const dictionary: Record<Locale, Dictionary> = {
       about: "About",
       products: "Products",
       media: "Media",
-      shop: "Shop",
       contact: "Contact",
       languageSwitch: "فا",
     },
@@ -362,25 +408,53 @@ export const dictionary: Record<Locale, Dictionary> = {
       items: {
         "70": {
           title: "Ethanol 70%",
+          subtitle: "Medical Ethyl Alcohol 70% (v/v)",
           desc: "A reliable choice for disinfection and surface cleaning, widely used across healthcare, commercial, household, and general-purpose settings.",
           cta: "View Details",
+          badge: "Popular",
+          purity: "70% v/v",
+          appearance: "Colorless, clear liquid",
+          packaging: "1-liter bottles in cartons of 12, and bulk",
+          use: "Disinfection and hygiene",
         },
         "96": {
           title: "Ethanol 96%",
+          subtitle: "Medical Ethyl Alcohol 96% (v/v)",
           desc: "Built for industrial and commercial use, supporting manufacturing, cleaning, and processing across a wide range of sectors.",
           cta: "View Details",
+          badge: "Best Seller",
+          purity: "96% v/v",
+          appearance: "Colorless, clear liquid",
+          packaging: "1-liter bottles in cartons of 12, and bulk",
+          use: "Industrial and commercial, manufacturing and cleaning",
         },
         "998": {
           title: "Ethanol 99.8%",
+          subtitle: "Ethyl Alcohol 99.8% (Absolute)",
           desc: "Our highest-purity grade, suited for demanding industrial, laboratory, and pharmaceutical applications requiring precision and consistency.",
           cta: "View Details",
+          badge: "High Purity",
+          purity: "99.8% (absolute)",
+          appearance: "Colorless, clear liquid",
+          packaging: "1-liter bottles in cartons of 12, and bulk",
+          use: "Laboratory, pharmaceutical and precise technical use",
         },
       },
-      orderNow: "Order Now",
+      specLabels: {
+        purity: "Purity",
+        formula: "Chemical formula",
+        appearance: "Appearance",
+        packaging: "Packaging",
+        use: "Typical use",
+      },
+      chemicalFormula: "C₂H₅OH · CAS 64-17-5",
+      requestQuote: "Request a Quote",
+      notice: "Flammable liquid. Keep away from heat and open flame.",
     },
-    productsBanner: {
-      title: "Order cartons online — shipped across Iran.",
-      cta: "Shop Now",
+    productsCta: {
+      title: "Need a custom order?",
+      body: "For bulk orders, industrial contracts, or products with specific technical requirements, contact our sales team.",
+      cta: "Contact our sales team",
     },
     why: {
       title: "Why Negin Fam Teb",
@@ -419,10 +493,9 @@ export const dictionary: Record<Locale, Dictionary> = {
       play: "Play slideshow",
     },
     ctaBand: {
-      title: "Ready to Order?",
-      body: "Order cartons through our shop, or contact us for bulk tanker inquiries.",
-      ctaCartons: "Order Cartons",
-      ctaBulk: "Bulk Inquiry",
+      title: "Ready to order?",
+      body: "Contact us for carton or bulk orders.",
+      cta: "Request a Quote",
     },
     footer: {
       tehranOfficeLabel: "Tehran Head Office",

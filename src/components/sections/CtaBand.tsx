@@ -23,12 +23,9 @@ export function CtaBand() {
             {dict.ctaBand.body}
           </p>
         </Reveal>
-        <Reveal delay={160} className="mt-2 flex flex-wrap items-center justify-center gap-4">
-          <Button href="/shop" variant="primary">
-            {dict.ctaBand.ctaCartons}
-          </Button>
-          <Button href="/contact" variant="secondary">
-            {dict.ctaBand.ctaBulk}
+        <Reveal delay={160} className="mt-2">
+          <Button href="/contact" variant="primary">
+            {dict.ctaBand.cta}
           </Button>
         </Reveal>
       </Container>

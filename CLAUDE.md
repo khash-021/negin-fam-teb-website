@@ -13,16 +13,17 @@ Next.js 14 (App Router) + Tailwind + TypeScript. Farsi default language, English
 ## Business facts
 - 3 ethanol grades only: 70%, 96%, 99.8%. Never mention or reference "96A" anywhere.
 - Positioning is currently "Industrial Ethanol Manufacturer". This is under review and may be broadened; follow the copy given in each task.
-- Sold in cartons (case of 12 bottles) and bulk tanker
+- Packaging: 1-liter bottles in cartons of 12, plus bulk tanker.
 - Factory: Maragheh. Office: Tehran.
-- Bulk/tanker orders go through Contact, not Shop
+- No online shop. Products are display-only and every call to action goes to /contact.
+- Copy for About, Contact, and Products comes from the old Taheri template and is NOT yet verified by the office — don't rewrite or remove it unless asked.
 
 ## Site status
-- Home page copy and structure are being reworked; expect changes.
-- Nav (Header.tsx): Home, About, Products, Media, Contact — Shop was removed from the nav
-- Built: Home, Products (placeholder cards, no detail pages yet), About (story, mission/vision, registration block)
-- Contact: real addresses, phone numbers, and email are in place. Form has four fields (name, phone, company, message) but is still NOT wired to a real sending backend — submit just simulates a delay and shows a success state
-- Stub (ComingSoon placeholder) pages: Media, Shop — /shop route still exists but isn't linked from nav
+- Home page copy and structure are still the older version and are going to be reworked.
+- Nav (Header.tsx): Home, About, Products, Media, Contact
+- Built: Home; About (story, mission/vision, registration block); Products (three cards, each with a fixed set of five spec rows, badges on Products only, one "Request a Quote" button to /contact, a flammable note, and a custom-order band); Contact (real addresses, phones, email, four-field form with no sending backend yet)
+- Stub (ComingSoon placeholder) page: Media — the only page not yet built
+- /shop redirects to /products (next.config.mjs) — the route itself was deleted
 - Deployed to Vercel (negin-fam-teb-website.vercel.app), auto-deploys on git push to main
 - Eventually moving to Arvan Cloud (Iranian VPS) for production — keep hosting-agnostic where possible
 

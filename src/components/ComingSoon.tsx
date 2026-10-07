@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
 
-type NavKey = "about" | "products" | "media" | "shop" | "contact";
+type NavKey = "about" | "products" | "media" | "contact";
 
 export function ComingSoon({ navKey }: { navKey: NavKey }) {
   const { dict } = useLanguage();
