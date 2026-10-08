@@ -22,11 +22,6 @@ export type Dictionary = {
     ctaPrimary: string;
     ctaSecondary: string;
   };
-  intro: {
-    title: string;
-    body: string;
-    points: { title: string; desc: string }[];
-  };
   grades: {
     title: string;
     subtitle: string;
@@ -60,26 +55,30 @@ export type Dictionary = {
     body: string;
     cta: string;
   };
-  why: {
-    title: string;
-    points: { title: string; desc: string }[];
-    placeholderTag: string;
-    placeholders: { title: string; note: string }[];
-  };
-  facility: {
+  applications: {
     eyebrow: string;
     title: string;
-    body: string;
-    ctaAbout: string;
-    ctaMedia: string;
+    intro: string;
+    items: { title: string; text: string }[];
+  };
+  qualityControl: {
+    eyebrow: string;
+    title: string;
+    intro: string;
     imageAlt: string;
-    slideAlts: string[];
-    slideshowLabel: string;
-    prev: string;
-    next: string;
-    goToSlide: string;
-    pause: string;
-    play: string;
+    imageBadgeTitle: string;
+    imageBadgeSubtitle: string;
+    items: { title: string; text: string }[];
+  };
+  productionProcess: {
+    eyebrow: string;
+    title: string;
+    steps: { title: string; text: string }[];
+  };
+  whoWeAre: {
+    title: string;
+    body: string;
+    cta: string;
   };
   ctaBand: {
     title: string;
@@ -147,11 +146,6 @@ export type Dictionary = {
   common: {
     placeholderImage: string;
     skipToContent: string;
-    pendingVerification: string;
-  };
-  proof: {
-    stats: { value: string; label: string }[];
-    badges: { label: string; pending?: boolean }[];
   };
 };
 
@@ -177,15 +171,6 @@ export const dictionary: Record<Locale, Dictionary> = {
         "نامی معتبر در صنعت الکل‌سازی ایران؛ کارخانه در مراغه، دفتر مرکزی در تهران، و اتانول با خلوص بالا برای صنایع کشور.",
       ctaPrimary: "مشاهده محصولات",
       ctaSecondary: "استعلام قیمت",
-    },
-    intro: {
-      title: "چه می‌کنیم",
-      body: "تمام مراحل تولید اتانول را خودمان انجام می‌دهیم — از تولید تا بسته‌بندی و تحویل، همه زیر نظر مستقیم ما.",
-      points: [
-        { title: "تولید", desc: "تولید در مقیاس صنعتی، با خط تولید پیوسته در مراغه." },
-        { title: "بسته‌بندی", desc: "بسته‌بندی استاندارد و یکدست — کارتن‌های ۱۲ بطری، آماده ارسال." },
-        { title: "تأمین فله", desc: "تحویل با تانکر، متناسب با نیاز صنعتی حجیم، در سراسر ایران." },
-      ],
     },
     grades: {
       title: "درجه‌های اتانول",
@@ -241,41 +226,99 @@ export const dictionary: Record<Locale, Dictionary> = {
       body: "برای سفارش فله‌ای، قراردادهای صنعتی یا محصول با مشخصات فنی خاص با کارشناسان فروش ما تماس بگیرید.",
       cta: "تماس با کارشناسان فروش",
     },
-    why: {
-      title: "چرا نگین فام طب",
-      points: [
-        { title: "خلوص و کیفیت", desc: "کنترل کیفیت در تمام مراحل تولید، مطابق استانداردهای صنعت." },
-        { title: "ظرفیت تولید", desc: "خط تولید پیوسته در مراغه، آماده سفارش‌های حجیم." },
-        { title: "تأمین پایدار", desc: "زنجیره تأمین بدون وقفه برای مشتریان صنعتی." },
-        { title: "پشتیبانی مستقیم", desc: "ارتباط مستقیم با تیم فروش در تهران و مراغه." },
-      ],
-      placeholderTag: "نیازمند تکمیل",
-      placeholders: [
-        { title: "دارای مجوز و ثبت رسمی", note: "[جای‌نگه‌دار: جزئیات مجوز و ثبت شرکت را اضافه کنید — وضعیت ثبت رسمی، مجوزهای صنعتی مرتبط]" },
-        { title: "استانداردها و گواهینامه‌ها", note: "[جای‌نگه‌دار: گواهینامه‌های کیفیت یا ایمنی، یا انطباق با استانداردهایی مثل ISO یا وزارت بهداشت را در صورت وجود اضافه کنید]" },
-        { title: "سابقه فعالیت", note: "[جای‌نگه‌دار: مدت زمان فعالیت شرکت را اضافه کنید]" },
-        { title: "آمار تولید", note: "[جای‌نگه‌دار: ارقام واقعی ظرفیت تولید را در صورت تمایل به اشتراک‌گذاری اضافه کنید]" },
+    applications: {
+      eyebrow: "کاربردها",
+      title: "صنایع تحت پوشش",
+      intro:
+        "اتانول تولید شده توسط نگین فام طب در طیف گسترده‌ای از صنایع حیاتی کشور به کار می‌رود و نقش کلیدی در تقویت زیرساخت‌های صنعتی ایفا می‌کند.",
+      items: [
+        {
+          title: "صنایع دارویی",
+          text: "تامین اتانول دارویی با خلوص بالا برای تولید انواع داروها، قرص‌ها، شربت‌ها و فرآورده‌های پزشکی. محصولات ما مطابق با استانداردهای دارویی کشور است.",
+        },
+        {
+          title: "صنایع غذایی",
+          text: "استفاده به عنوان حلال و افزودنی در فرآوری مواد غذایی، عصاره‌گیری گیاهی و تولید طعم‌دهنده‌ها با رعایت کامل استانداردهای بهداشتی.",
+        },
+        {
+          title: "آرایشی و بهداشتی",
+          text: "ماده اولیه برای تولید عطر، ادکلن، محصولات مراقبت از پوست، دهان‌شویه و سایر محصولات آرایشی-بهداشتی با خلوص مطمئن.",
+        },
+        {
+          title: "تجهیزات پزشکی",
+          text: "ضدعفونی سطوح و تجهیزات بیمارستانی، مطب‌ها، کلینیک‌ها و آزمایشگاه‌ها. الکل ۹۶٪ و ۹۹.۸٪ برای مصارف پزشکی حساس.",
+        },
+        {
+          title: "صنایع شیمیایی",
+          text: "حلال صنعتی در تولید مواد شیمیایی، رنگ‌ها، رزین‌ها و فرآیندهای شیمیایی مختلف که نیاز به اتانول با مشخصات فنی دارند.",
+        },
+        {
+          title: "سوخت صنعتی",
+          text: "اتانول سوختی برای مصارف صنعتی و انرژی، در صورت نیاز به سفارش‌سازی با مشخصات فنی خاص برای صنایع انرژی.",
+        },
       ],
     },
-    facility: {
-      eyebrow: "کارخانه",
-      title: "کارخانه مراغه",
-      body: "خط تولید نگین فام طب در مراغه، آذربایجان شرقی، با ظرفیت پیوسته در حال فعالیت است.",
-      ctaAbout: "بیشتر بدانید",
-      ctaMedia: "مشاهده گالری",
-      imageAlt: "نمای بیرونی کارخانه نگین فام طب در مراغه",
-      slideAlts: [
-        "نمای بیرونی کارخانه نگین فام طب در مراغه",
-        "آزمایشگاه نگین فام طب؛ ظروف و تجهیزات شیشه‌ای آزمایشگاهی",
-        "آزمایشگاه نگین فام طب؛ قفسه‌های نمونه و بالن‌های حجمی",
-        "بالن‌های حجمی حاوی نمونه روی قفسه آزمایشگاه",
+    qualityControl: {
+      eyebrow: "کنترل کیفیت",
+      title: "تعهد به کیفیت و ایمنی",
+      intro:
+        "ما در نگین فام طب با تعهد کامل به نوآوری و کیفیت، تمامی محصولات خود را تحت کنترل دقیق آزمایشگاهی تولید می‌کنیم. هدف ما تضمین سلامت مصرف‌کنندگان نهایی و ارائه محصولاتی مطابق با استانداردهای دارویی و بهداشتی کشور است.",
+      imageAlt: "قفسه آزمایشگاه نگین فام طب با بالن‌های حجمی، استوانه‌های مدرج و بطری‌های قهوه‌ای معرف شیمیایی",
+      imageBadgeTitle: "کنترل کیفیت",
+      imageBadgeSubtitle: "هر دوره تولید",
+      items: [
+        {
+          title: "غیرخوراکی و ایمن",
+          text: "تمامی محصولات نگین فام طب غیرخوراکی بوده و با افزودن ۱۰ppm دناتونیوم بنزوات از مصرف خوراکی جلوگیری می‌شود.",
+        },
+        {
+          title: "فاقد متانول",
+          text: "محصولات ما کاملاً فاقد متانول و ایزوپروپیل الکل هستند تا بالاترین سطح ایمنی برای مصرف‌کنندگان تضمین شود.",
+        },
+        {
+          title: "گواهی‌های بهداشتی",
+          text: "تولید تحت نظارت مراجع بهداشتی و دارویی کشور و مطابق با استانداردهای ملی و بین‌المللی.",
+        },
+        {
+          title: "آزمایشگاه کنترل کیفیت",
+          text: "کنترل کیفیت مستمر در آزمایشگاه مجهز کارخانه برای اطمینان از خلوص و کیفیت هر دوره تولید.",
+        },
+        {
+          title: "تولید پایدار",
+          text: "استفاده از فناوری‌های پیشرفته و فرآیندهای تولید دوست‌دار محیط زیست برای کاهش اثرات صنعتی.",
+        },
+        {
+          title: "توزیع سراسری",
+          text: "محصولات ما در سراسر ایران شناخته شده و مورد استفاده قرار می‌گیرند و از طریق شبکه توزیع گسترده قابل دسترسی هستند.",
+        },
       ],
-      slideshowLabel: "تصاویر کارخانه و آزمایشگاه",
-      prev: "اسلاید قبلی",
-      next: "اسلاید بعدی",
-      goToSlide: "رفتن به اسلاید",
-      pause: "توقف نمایش خودکار",
-      play: "پخش خودکار",
+    },
+    productionProcess: {
+      eyebrow: "فرآیند تولید",
+      title: "از مواد اولیه تا محصول نهایی",
+      steps: [
+        {
+          title: "تامین مواد اولیه",
+          text: "تهیه مواد اولیه باکیفیت از منابع معتبر و آزمایش اولیه برای اطمینان از خلوص و استاندارد.",
+        },
+        {
+          title: "تخمیر",
+          text: "تخمیر کنترل‌شده مواد اولیه با نظارت مستمر کارشناسان تولید.",
+        },
+        {
+          title: "تقطیر و خلوص‌سازی",
+          text: "تقطیر چندمرحله‌ای برای رسیدن به خلوص مطلوب و حذف ناخالصی‌ها.",
+        },
+        {
+          title: "کنترل کیفیت و بسته‌بندی",
+          text: "آزمایش نهایی در آزمایشگاه کنترل کیفیت و بسته‌بندی استاندارد در بطری یا فله.",
+        },
+      ],
+    },
+    whoWeAre: {
+      title: "ما که هستیم",
+      body: "نگین فام طب یک شرکت سهامی خاص ثبت‌شده با شماره ثبت ۳۲۶۹ است. معرفی شرکت، ماموریت و اطلاعات ثبت رسمی را در صفحه درباره ما ببینید.",
+      cta: "درباره ما",
     },
     ctaBand: {
       title: "آماده سفارش هستید؟",
@@ -361,14 +404,6 @@ export const dictionary: Record<Locale, Dictionary> = {
     common: {
       placeholderImage: "تصویر جایگزین — عکس واقعی بعداً اضافه می‌شود",
       skipToContent: "پرش به محتوای اصلی",
-      pendingVerification: "در انتظار تأیید",
-    },
-    proof: {
-      stats: [
-        { value: "۳", label: "درجه خلوص اتانول" },
-        { value: "۱", label: "کارخانه در مراغه" },
-      ],
-      badges: [{ label: "دفتر تهران، کارخانه مراغه" }],
     },
   },
   en: {
@@ -392,15 +427,6 @@ export const dictionary: Record<Locale, Dictionary> = {
         "A trusted name in Iran's ethanol industry: factory in Maragheh, head office in Tehran, and high-purity ethanol for the country's industries.",
       ctaPrimary: "View Products",
       ctaSecondary: "Request a Quote",
-    },
-    intro: {
-      title: "What We Do",
-      body: "We handle every stage of ethanol production ourselves — from raw manufacturing to packaging to delivery, in-house and under our own control.",
-      points: [
-        { title: "Manufacturing", desc: "Industrial-scale production, running continuously in Maragheh." },
-        { title: "Packaging", desc: "Consistent, standardized packaging — 12 bottles per carton, ready to ship." },
-        { title: "Bulk Supply", desc: "Tanker delivery built for high-volume industrial demand, wherever you are in Iran." },
-      ],
     },
     grades: {
       title: "Ethanol Grades",
@@ -456,41 +482,99 @@ export const dictionary: Record<Locale, Dictionary> = {
       body: "For bulk orders, industrial contracts, or products with specific technical requirements, contact our sales team.",
       cta: "Contact our sales team",
     },
-    why: {
-      title: "Why Negin Fam Teb",
-      points: [
-        { title: "Purity & Quality", desc: "Quality control at every stage, held to standard." },
-        { title: "Production Capacity", desc: "Continuous production line in Maragheh, ready for volume orders." },
-        { title: "Reliable Supply", desc: "Uninterrupted supply chain for industrial buyers." },
-        { title: "Direct Support", desc: "Direct line to our sales team in Tehran and Maragheh." },
-      ],
-      placeholderTag: "TODO",
-      placeholders: [
-        { title: "Licensed & Registered", note: "[PLACEHOLDER: Add licensing/registration details — company registration status, relevant industry licenses]" },
-        { title: "Industry Standards & Certifications", note: "[PLACEHOLDER: Add any quality/safety certifications or standards compliance — e.g. ISO, GMP, health ministry licensing, whatever actually applies]" },
-        { title: "Years in Operation", note: "[PLACEHOLDER: Add how long the company has been operating]" },
-        { title: "Production Output", note: "[PLACEHOLDER: Add real production volume/capacity figures if we want to share them]" },
+    applications: {
+      eyebrow: "Applications",
+      title: "Industries We Serve",
+      intro:
+        "The ethanol produced by Negin Fam Teb is used across a wide range of the country's vital industries and plays a key role in strengthening industrial infrastructure.",
+      items: [
+        {
+          title: "Pharmaceutical Industry",
+          text: "Supplying high-purity pharmaceutical ethanol for the production of various medicines, tablets, syrups, and medical preparations. Our products comply with the country's pharmaceutical standards.",
+        },
+        {
+          title: "Food Industry",
+          text: "Used as a solvent and additive in food processing, plant extraction, and flavoring production, in full compliance with hygiene standards.",
+        },
+        {
+          title: "Cosmetics and Hygiene",
+          text: "Raw material for the production of perfume, cologne, skin care products, mouthwash, and other cosmetic and hygiene products with reliable purity.",
+        },
+        {
+          title: "Medical Equipment",
+          text: "Disinfection of surfaces and equipment in hospitals, clinics, offices, and laboratories. 96% and 99.8% alcohol for sensitive medical uses.",
+        },
+        {
+          title: "Chemical Industry",
+          text: "Industrial solvent in the production of chemicals, paints, resins, and various chemical processes that require ethanol with specific technical properties.",
+        },
+        {
+          title: "Industrial Fuel",
+          text: "Fuel ethanol for industrial and energy uses, custom-formulated with specific technical properties for the energy industry when required.",
+        },
       ],
     },
-    facility: {
-      eyebrow: "Facility",
-      title: "Maragheh Facility",
-      body: "Our production line in Maragheh, East Azerbaijan, operates at continuous industrial capacity.",
-      ctaAbout: "Learn More",
-      ctaMedia: "View Media",
-      imageAlt: "Exterior view of the Negin Fam Teb factory in Maragheh",
-      slideAlts: [
-        "Exterior view of the Negin Fam Teb factory in Maragheh",
-        "Negin Fam Teb laboratory with glassware and lab equipment",
-        "Laboratory shelves with volumetric flasks and sample bottles",
-        "Volumetric flasks with samples on a laboratory shelf",
+    qualityControl: {
+      eyebrow: "Quality Control",
+      title: "Committed to Quality and Safety",
+      intro:
+        "At Negin Fam Teb, with full commitment to innovation and quality, we produce all of our products under strict laboratory control. Our goal is to guarantee the health of end consumers and deliver products that comply with the country's pharmaceutical and hygiene standards.",
+      imageAlt: "Negin Fam Teb laboratory shelf with volumetric flasks, graduated cylinders, and amber reagent bottles",
+      imageBadgeTitle: "Quality Control",
+      imageBadgeSubtitle: "Every production run",
+      items: [
+        {
+          title: "Non-Consumable and Safe",
+          text: "All Negin Fam Teb products are non-consumable, with 10ppm denatonium benzoate added to prevent consumption.",
+        },
+        {
+          title: "Methanol-Free",
+          text: "Our products are completely free of methanol and isopropyl alcohol, guaranteeing the highest level of safety for consumers.",
+        },
+        {
+          title: "Health Certifications",
+          text: "Produced under the supervision of the country's health and pharmaceutical authorities, in compliance with national and international standards.",
+        },
+        {
+          title: "Quality Control Laboratory",
+          text: "Continuous quality control in the factory's equipped laboratory to ensure the purity and quality of every production batch.",
+        },
+        {
+          title: "Sustainable Production",
+          text: "Use of advanced technologies and environmentally friendly production processes to reduce industrial impact.",
+        },
+        {
+          title: "Nationwide Distribution",
+          text: "Our products are known and used across Iran and are accessible through an extensive distribution network.",
+        },
       ],
-      slideshowLabel: "Factory and laboratory photos",
-      prev: "Previous slide",
-      next: "Next slide",
-      goToSlide: "Go to slide",
-      pause: "Pause slideshow",
-      play: "Play slideshow",
+    },
+    productionProcess: {
+      eyebrow: "Production Process",
+      title: "From Raw Materials to Finished Product",
+      steps: [
+        {
+          title: "Raw material sourcing",
+          text: "Quality raw materials from reliable sources, with initial testing to confirm purity and standards.",
+        },
+        {
+          title: "Fermentation",
+          text: "Controlled fermentation of the raw material, with continuous supervision by production specialists.",
+        },
+        {
+          title: "Distillation and purification",
+          text: "Multi-stage distillation to reach the target purity and remove impurities.",
+        },
+        {
+          title: "Quality control and packaging",
+          text: "Final testing in the quality control lab and standard packaging in bottles or bulk.",
+        },
+      ],
+    },
+    whoWeAre: {
+      title: "Who We Are",
+      body: "Negin Fam Teb is a registered private joint stock company (registration No. 3269). Read about the company, our mission and the official registration details on the About page.",
+      cta: "About Us",
     },
     ctaBand: {
       title: "Ready to order?",
@@ -576,14 +660,6 @@ export const dictionary: Record<Locale, Dictionary> = {
     common: {
       placeholderImage: "Placeholder image — real photo to be added",
       skipToContent: "Skip to main content",
-      pendingVerification: "Pending Verification",
-    },
-    proof: {
-      stats: [
-        { value: "3", label: "Ethanol Purity Grades" },
-        { value: "1", label: "Factory in Maragheh" },
-      ],
-      badges: [{ label: "Tehran Office, Maragheh Factory" }],
     },
   },
 };

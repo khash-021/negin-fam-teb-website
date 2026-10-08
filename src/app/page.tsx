@@ -1,10 +1,11 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { Intro } from "@/components/sections/Intro";
 import { GradesStrip } from "@/components/sections/GradesStrip";
-import { WhyUs } from "@/components/sections/WhyUs";
-import { FacilitySnapshot } from "@/components/sections/FacilitySnapshot";
+import { Applications } from "@/components/sections/Applications";
+import { QualityControl } from "@/components/sections/QualityControl";
+import { ProductionProcess } from "@/components/sections/ProductionProcess";
+import { WhoWeAre } from "@/components/sections/WhoWeAre";
 import { CtaBand } from "@/components/sections/CtaBand";
 
 export default function HomePage() {
@@ -13,10 +14,11 @@ export default function HomePage() {
       <Header />
       <main id="main-content">
         <Hero />
-        <Intro />
         <GradesStrip />
-        <WhyUs />
-        <FacilitySnapshot />
+        <Applications />
+        <QualityControl />
+        <ProductionProcess />
+        <WhoWeAre />
         <CtaBand />
       </main>
       <Footer />
