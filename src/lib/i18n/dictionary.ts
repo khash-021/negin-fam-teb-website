@@ -15,6 +15,9 @@ export type Dictionary = {
     contact: string;
     languageSwitch: string;
   };
+  header: {
+    phoneAriaLabel: string;
+  };
   hero: {
     eyebrow: string;
     name: string;
@@ -98,6 +101,7 @@ export type Dictionary = {
     langTitle: string;
     rights: string;
     blurb: string;
+    legal: string;
   };
   comingSoon: {
     title: string;
@@ -163,6 +167,9 @@ export const dictionary: Record<Locale, Dictionary> = {
       media: "گالری",
       contact: "تماس با ما",
       languageSwitch: "EN",
+    },
+    header: {
+      phoneAriaLabel: "تماس با دفتر تهران",
     },
     hero: {
       eyebrow: "تولیدکننده تخصصی اتانول طبی و صنعتی",
@@ -338,6 +345,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       langTitle: "زبان",
       rights: "© {year} نگین فام طب. تمامی حقوق محفوظ است.",
       blurb: "نگین فام طب تولیدکننده و تأمین‌کننده اتانول در سراسر ایران است، از فروش کارتنی تا سفارش‌های صنعتی فله.",
+      legal: "شناسه ملی: ۱۴۰۰۰۱۷۴۶۲۸ | شماره ثبت: ۳۲۶۹",
     },
     comingSoon: {
       title: "به‌زودی",
@@ -419,6 +427,9 @@ export const dictionary: Record<Locale, Dictionary> = {
       media: "Media",
       contact: "Contact",
       languageSwitch: "فا",
+    },
+    header: {
+      phoneAriaLabel: "Call the Tehran office",
     },
     hero: {
       eyebrow: "Specialized Manufacturer of Medical & Industrial Ethanol",
@@ -594,6 +605,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       langTitle: "Language",
       rights: "© {year} Negin Fam Teb. All rights reserved.",
       blurb: "Negin Fam Teb manufactures and supplies ethanol across Iran, from cartoned retail to industrial bulk orders.",
+      legal: "National ID: 14000174628 | Registration No: 3269",
     },
     comingSoon: {
       title: "Coming Soon",

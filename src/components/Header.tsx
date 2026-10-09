@@ -4,8 +4,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { phoneLinks } from "@/data/contact";
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+
+const phoneIcon = (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 20 20"
+    className="h-4 w-4"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.75"
+  >
+    <path
+      d="M4 3h3l1.5 4-2 1.5a10 10 0 005 5l1.5-2 4 1.5v3a1 1 0 01-1 1A14 14 0 013 4a1 1 0 011-1z"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export function Header() {
   const { dict } = useLanguage();
@@ -27,10 +45,10 @@ export function Header() {
       >
         {dict.common.skipToContent}
       </a>
-      <Container className="flex h-16 items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr]">
+      <Container className="relative flex h-16 items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2 text-sm font-bold tracking-wide md:justify-self-start text-ink-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900 rounded"
+          className="flex items-center gap-2 text-sm font-bold tracking-wide text-ink-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900 rounded"
         >
           <Image
             src="/logo-mark.png"
@@ -46,7 +64,7 @@ export function Header() {
 
         <nav
           aria-label={dict.footer.navTitle}
-          className="hidden items-center gap-7 md:flex"
+          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-7 md:flex"
         >
           {links.map((link) => (
             <Link
@@ -59,7 +77,31 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 md:justify-self-end md:gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
+          <a
+            href={phoneLinks.tehran}
+            dir="ltr"
+            className="hidden items-center gap-1.5 text-sm font-medium text-ink-300 transition-colors hover:text-brand-400 md:inline-flex"
+          >
+            {phoneIcon}
+            {dict.footer.tehranPhone}
+          </a>
+
+          <Link
+            href="/contact"
+            className="hidden items-center justify-center gap-1.5 rounded-md bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900 md:inline-flex"
+          >
+            {dict.grades.requestQuote}
+          </Link>
+
+          <a
+            href={phoneLinks.tehran}
+            aria-label={dict.header.phoneAriaLabel}
+            className="flex h-11 w-11 items-center justify-center rounded-md border border-surface-border text-ink-50 md:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+          >
+            {phoneIcon}
+          </a>
+
           <LanguageSwitcher />
 
           <button
@@ -100,6 +142,24 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
+            <div className="mt-2 flex flex-col gap-2 border-t border-surface-border pt-3">
+              <a
+                href={phoneLinks.tehran}
+                dir="ltr"
+                className="flex min-h-11 items-center justify-start gap-2 rounded-md px-2 text-sm font-medium text-ink-300 hover:bg-surface-800 hover:text-brand-400"
+              >
+                {phoneIcon}
+                {dict.footer.tehranPhone}
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="flex min-h-11 items-center justify-center rounded-md bg-brand-500 px-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-brand-400"
+              >
+                {dict.grades.requestQuote}
+              </Link>
+            </div>
           </Container>
         </div>
       )}

@@ -101,9 +101,12 @@ export function Footer() {
       </Container>
 
       <div className="border-t border-surface-border">
-        <Container className="py-5">
+        <Container className="flex flex-col gap-1.5 py-5 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-ink-400">
             {dict.footer.rights.replace("{year}", String(year))}
+          </p>
+          <p dir="ltr" className="text-xs text-ink-400 md:text-end">
+            {dict.footer.legal}
           </p>
         </Container>
       </div>
