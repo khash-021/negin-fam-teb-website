@@ -61,3 +61,45 @@ html[data-locale-pending] body {
     transform: none;
   }
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.qc-accordion > summary {
+  list-style: none;
+}
+
+.qc-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.qc-accordion > summary .chevron {
+  transition: transform 200ms ease;
+}
+
+.qc-accordion[open] > summary .chevron {
+  transform: rotate(180deg);
+}
+
+main#main-content {
+  animation: page-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main#main-content {
+    animation: none;
+  }
+}

@@ -32,18 +32,19 @@ export function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-surface-950/80" />
+      <div className="absolute inset-0 bg-surface-950/55" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_50%,rgba(22,23,26,0.7),transparent_100%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_0%,rgba(218,46,42,0.16),transparent_70%)]" />
 
-      <Container className="relative py-24 text-center md:py-32">
+      <Container className="relative py-14 text-center lg:py-32">
         <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)]">
             {dict.hero.eyebrow}
           </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-50 md:text-6xl">
+          <h1 className="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-50 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)] md:text-6xl">
             {dict.hero.name}
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-200 md:text-lg">
+          <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-ink-200 [text-shadow:0_2px_16px_rgba(0,0,0,0.6)] md:text-lg">
             {dict.hero.tagline}
           </p>
 

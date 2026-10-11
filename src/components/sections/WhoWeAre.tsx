@@ -10,7 +10,7 @@ export function WhoWeAre() {
 
   return (
     <section className="border-b border-surface-border bg-surface-900">
-      <Container className="py-16 md:py-20">
+      <Container className="py-10 lg:py-20">
         <Reveal className="mx-auto flex max-w-xl flex-col items-center gap-4 text-center">
           <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-3xl">
             {dict.whoWeAre.title}

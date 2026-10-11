@@ -12,17 +12,20 @@ Next.js 14 (App Router) + Tailwind + TypeScript. Farsi default language, English
 
 ## Business facts
 - 3 ethanol grades only: 70%, 96%, 99.8%. Never mention or reference "96A" anywhere.
-- Positioning is currently "Industrial Ethanol Manufacturer". This is under review and may be broadened; follow the copy given in each task.
+- Positioning (hero, dictionary.ts): eyebrow "Specialized Manufacturer of Medical & Industrial Ethanol" / تولیدکننده تخصصی اتانول طبی و صنعتی; tagline covers Maragheh factory, Tehran head office, and high-purity ethanol.
 - Packaging: 1-liter bottles in cartons of 12, plus bulk tanker.
 - Factory: Maragheh. Office: Tehran.
 - No online shop. Products are display-only and every call to action goes to /contact.
-- Copy for About, Contact, and Products comes from the old Taheri template and is NOT yet verified by the office — don't rewrite or remove it unless asked.
+- Copy on About, Contact, Products, and the Home Applications/Quality Control/Production Process sections comes from the old Taheri template and is NOT yet verified by the office — don't rewrite or remove it unless asked.
 
 ## Site status
-- Home page copy and structure are still the older version and are going to be reworked.
 - Nav (Header.tsx): Home, About, Products, Media, Contact
-- Built: Home; About (story, mission/vision, registration block); Products (three cards, each with a fixed set of five spec rows, badges on Products only, one "Request a Quote" button to /contact, a flammable note, and a custom-order band); Contact (real addresses, phones, email, four-field form with no sending backend yet)
+- Built: Home, About (story, mission/vision, registration block), Products (three cards, five spec rows, badges, one "Request a Quote" button, flammable note, custom-order band), Contact (real addresses/phones/email, four-field form, no sending backend yet)
 - Stub (ComingSoon placeholder) page: Media — the only page not yet built
+- Home order (src/app/page.tsx): Hero, Grades strip, Applications, Quality Control (lab photo + badge), Production Process, Who We Are, bottom CTA band
+- Header: phone number and a "Request a Quote" button next to the language switcher
+- Footer: registration line (national ID + registration number) in the bottom bar alongside copyright
+- Photos in public/: factory/factory-outside.webp (Hero background), factory/azmayeshga-3.webp (Quality Control), products/ethanol-{70,96,99}-landscape.png (Products cards). products/ethanol-{70,96,99}.png (non-landscape) are unused leftovers.
 - /shop redirects to /products (next.config.mjs) — the route itself was deleted
 - Deployed to Vercel (negin-fam-teb-website.vercel.app), auto-deploys on git push to main
 - Eventually moving to Arvan Cloud (Iranian VPS) for production — keep hosting-agnostic where possible

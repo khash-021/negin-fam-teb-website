@@ -10,7 +10,7 @@ export function QualityControl() {
 
   return (
     <section className="border-b border-surface-border bg-surface-800">
-      <Container className="py-16 md:py-24">
+      <Container className="py-10 lg:py-24">
         <Reveal className="max-w-xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-400">
             {dict.qualityControl.eyebrow}
@@ -23,7 +23,56 @@ export function QualityControl() {
           </p>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
+        {/* Mobile/tablet: compact photo + accordion */}
+        <div className="mt-6 lg:hidden">
+          <Reveal className="relative">
+            <div className="relative mx-auto aspect-[16/10] w-full max-w-[640px] overflow-hidden rounded-xl border border-surface-border">
+              <Image
+                src="/factory/azmayeshga-3.webp"
+                alt={dict.qualityControl.imageAlt}
+                fill
+                loading="lazy"
+                quality={90}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="pointer-events-none absolute left-0 top-0 z-10 -translate-x-2 -translate-y-1/2 rounded-lg bg-brand-500 px-4 py-2.5 shadow-lg sm:-translate-x-4">
+              <p className="text-xs font-bold text-white">
+                {dict.qualityControl.imageBadgeTitle}
+              </p>
+              <p className="mt-0.5 text-base font-bold text-white">
+                {dict.qualityControl.imageBadgeSubtitle}
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mx-auto mt-6 max-w-[672px]">
+            {dict.qualityControl.items.map((item, i) => (
+              <Reveal key={item.title} delay={100 + i * 70}>
+                <details className="qc-accordion border-b border-surface-border">
+                  <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 py-3 text-sm font-bold text-ink-50">
+                    {item.title}
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 20 20"
+                      className="chevron h-4 w-4 shrink-0 text-ink-400"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path d="M5 7.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </summary>
+                  <p className="pb-4 text-xs leading-relaxed text-ink-400">{item.text}</p>
+                </details>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop/laptop: unchanged grid */}
+        <div className="mt-10 hidden gap-8 lg:grid lg:grid-cols-2 lg:items-stretch lg:gap-10">
           <Reveal className="relative mt-10">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-surface-border lg:aspect-auto lg:h-full">
               <Image

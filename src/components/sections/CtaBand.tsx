@@ -12,7 +12,7 @@ export function CtaBand() {
     <section className="relative overflow-hidden border-b border-surface-border bg-surface-950">
       <div className="pointer-events-none absolute inset-0 bg-dot-grid opacity-50" />
       <div className="pointer-events-none absolute inset-0 bg-grid-fade" />
-      <Container className="relative flex flex-col items-center gap-6 py-20 text-center md:py-28">
+      <Container className="relative flex flex-col items-center gap-6 py-12 text-center lg:py-28">
         <Reveal>
           <h2 className="max-w-xl text-3xl font-extrabold leading-tight tracking-tight text-ink-50 md:text-4xl">
             {dict.ctaBand.title}
